@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "IGB200 - Stack.slnx"
+    "dotnet.defaultSolution": "IGB200-Team16.slnx"
 }
