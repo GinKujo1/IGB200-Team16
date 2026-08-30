@@ -13,9 +13,17 @@ public class Equation : MonoBehaviour
     [SerializeField]
     private TMP_Text FeedbackText;
     [SerializeField]
+    private TMP_Text OperationTypes;
+    [SerializeField]
     private TMP_InputField EnterAnswer;
     public int _minValue = 0;
     public int _maxValue = 100;
+
+    public enum Operations { Add, Subtract, Multiply, Division };
+    public Operations operation = Operations.Add;
+
+    public bool RandomOperations = false;
+
 
     private int Number1;
     private int Number2;
@@ -23,37 +31,95 @@ public class Equation : MonoBehaviour
     private int UserAnswer;
 
 
-
     private int RandomNumber()
     {
         return Random.Range(_minValue, _maxValue + 1);
     }
 
+    private Operations GetRandomOperations()
+    {
+        Operations[] ops = { Operations.Add, Operations.Subtract, Operations.Multiply, Operations.Division };
+        return ops[Random.Range(0, ops.Length)];
+
+    }
+
 
     private void GenerateEquation()
     {
-        Number1 = RandomNumber();
-        Number2 = RandomNumber();
-        Answer = Number1 + Number2;
+        if (RandomOperations)
+        {
+            operation = GetRandomOperations();
+        }
+        switch (operation)
+        {
+            case Operations.Add:
+                GenerateAddition();
+                break;
 
+            case Operations.Subtract:
+                GenerateSubtraction();
+                break;
+
+            case Operations.Multiply:
+                GenerateMultiplication();
+                break;
+
+            case Operations.Division:
+                GenerateDivision();
+                break;
+        }
         Number1Text.text = Number1.ToString();
         Number2Text.text = Number2.ToString();
     }
 
+    private void GenerateAddition()
+    {
+
+
+        Number1 = RandomNumber();
+        Number2 = RandomNumber();
+        Answer = Number1 + Number2;
+    }
+    private void GenerateSubtraction()
+    {
+
+
+        Number1 = RandomNumber();
+        Number2 = RandomNumber();
+        Answer = Number1 - Number2;
+    }
+    private void GenerateMultiplication()
+    {
+
+
+        Number1 = RandomNumber();
+        Number2 = RandomNumber();
+        Answer = Number1 * Number2;
+    }
+    private void GenerateDivision()
+    {
+        Number1 = RandomNumber();
+        Number2 = RandomNumber();
+        Answer = Number1 / Number2;
+    }
     public void CheckAnswer()
     {
-        UserAnswer = int.Parse(EnterAnswer.text);
+        if (!int.TryParse(EnterAnswer.text, out UserAnswer))
+        {
+            FeedbackText.text = "Please enter a valid number";
+            return;
+        }
 
-        if(UserAnswer == Answer)
+        if (UserAnswer == Answer)
         {
             FeedbackText.text = "CORRECT";
         }
         else
         {
-            FeedbackText.text = "INCORRECT, the answer was {Answer}.";     
+            FeedbackText.text = $"INCORRECT, the answer was {Answer}.";
         }
     }
-        
+
     public void NewEquation()
     {
         EnterAnswer.text = null;
