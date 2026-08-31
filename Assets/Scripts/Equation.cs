@@ -19,7 +19,7 @@ public class Equation : MonoBehaviour
     public int _minValue = 0;
     public int _maxValue = 100;
 
-    public enum Operations { Add, Subtract, Multiply, Division };
+    public enum Operations { Add, Subtract, Multiply}; //Division };
     public Operations operation = Operations.Add;
 
     public bool RandomOperations = false;
@@ -38,9 +38,20 @@ public class Equation : MonoBehaviour
 
     private Operations GetRandomOperations()
     {
-        Operations[] ops = { Operations.Add, Operations.Subtract, Operations.Multiply, Operations.Division };
+        Operations[] ops = { Operations.Add, Operations.Subtract, Operations.Multiply}; //,Operations.Division
         return ops[Random.Range(0, ops.Length)];
 
+    }
+    private string GetOperationSymbol(Operations op)
+    {
+        switch (op)
+        {
+            case Operations.Add: return "+";
+            case Operations.Subtract: return "-";
+            case Operations.Multiply: return "×";
+            ///case Operations.Division: return "÷";
+            default: return "";
+        }
     }
 
 
@@ -64,12 +75,13 @@ public class Equation : MonoBehaviour
                 GenerateMultiplication();
                 break;
 
-            case Operations.Division:
-                GenerateDivision();
-                break;
+            //case Operations.Division:
+                //GenerateDivision();
+               // break;
         }
         Number1Text.text = Number1.ToString();
         Number2Text.text = Number2.ToString();
+        OperationTypes.text = GetOperationSymbol(operation);
     }
 
     private void GenerateAddition()
@@ -90,18 +102,22 @@ public class Equation : MonoBehaviour
     }
     private void GenerateMultiplication()
     {
+        int multMin = Mathf.Min(_maxValue = 1);
+        int multMax = Mathf.Max(_minValue = 12);
 
-
-        Number1 = RandomNumber();
-        Number2 = RandomNumber();
+        Number1 = Random.Range(multMin, multMax + 1);
+        Number2 = Random.Range(multMin, multMax + 1);
         Answer = Number1 * Number2;
     }
-    private void GenerateDivision()
-    {
-        Number1 = RandomNumber();
-        Number2 = RandomNumber();
-        Answer = Number1 / Number2;
-    }
+    ///private void GenerateDivision()
+    //{
+    // Mathf.Min(_maxValue = 1);
+    // Mathf.Max(_minValue = 12);
+
+    //        Number1 = RandomNumber();
+    //        Number2 = RandomNumber();
+    //   Answer = Number1 / Number2;
+    //}
     public void CheckAnswer()
     {
         if (!int.TryParse(EnterAnswer.text, out UserAnswer))
@@ -126,4 +142,8 @@ public class Equation : MonoBehaviour
         FeedbackText.text = null;
         GenerateEquation();
     }
+    private void Start()
+    {
+        GenerateEquation();
+    } 
 }
