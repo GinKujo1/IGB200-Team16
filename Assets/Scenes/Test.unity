@@ -606,7 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b26494aaea6c7f4696f950b1e149bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
-  CorrectBuilding: {fileID: 3835329636032380793, guid: 2cc28458116b6b94587f661a5f2cd18b, type: 3}
+  CorrectBuilding: {fileID: 6486698581034566682, guid: 86f4a7cba8a64da45a6669aacdbf8554, type: 3}
   spawnerObject: {fileID: 1069605024}
 --- !u!1 &410087039
 GameObject:
