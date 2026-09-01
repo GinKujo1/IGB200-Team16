@@ -114,8 +114,8 @@ public class Equation : MonoBehaviour
     // Mathf.Min(_maxValue = 1);
     // Mathf.Max(_minValue = 12);
 
-    //        Number1 = RandomNumber();
-    //        Number2 = RandomNumber();
+       // Number1 = Random.Range(multMin, multMax + 1);
+       // Number2 = Random.Range(multMin, multMax + 1);
     //   Answer = Number1 / Number2;
     //}
     public void CheckAnswer()
