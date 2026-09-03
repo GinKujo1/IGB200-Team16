@@ -19,7 +19,7 @@ public class Equation : MonoBehaviour
     public int _minValue = 0;
     public int _maxValue = 100;
 
-    public enum Operations { Add, Subtract, Multiply}; //Division };
+    public enum Operations { Add, Subtract, Multiply, Division };
     public Operations operation = Operations.Add;
 
     public bool RandomOperations = false;
@@ -49,7 +49,7 @@ public class Equation : MonoBehaviour
             case Operations.Add: return "+";
             case Operations.Subtract: return "-";
             case Operations.Multiply: return "×";
-            ///case Operations.Division: return "÷";
+            case Operations.Division: return "÷";
             default: return "";
         }
     }
@@ -75,9 +75,9 @@ public class Equation : MonoBehaviour
                 GenerateMultiplication();
                 break;
 
-            //case Operations.Division:
-                //GenerateDivision();
-               // break;
+            case Operations.Division:
+            GenerateDivision();
+               break;
         }
         Number1Text.text = Number1.ToString();
         Number2Text.text = Number2.ToString();
@@ -109,15 +109,15 @@ public class Equation : MonoBehaviour
         Number2 = Random.Range(multMin, multMax + 1);
         Answer = Number1 * Number2;
     }
-    ///private void GenerateDivision()
-    //{
-    // Mathf.Min(_maxValue = 1);
-    // Mathf.Max(_minValue = 12);
+    private void GenerateDivision()
+    {
+        int divisorMin = Mathf.Max(_minValue, 1);
+        int divisorMax = Mathf.Min(_maxValue, 12); 
 
-       // Number1 = Random.Range(multMin, multMax + 1);
-       // Number2 = Random.Range(multMin, multMax + 1);
-    //   Answer = Number1 / Number2;
-    //}
+        Number2 = Random.Range(divisorMin, divisorMax + 1);          
+        Answer = Random.Range(_minValue, _maxValue + 1);              
+        Number1 = Number2 * Answer;                                  
+    }
     public void CheckAnswer()
     {
         if (!int.TryParse(EnterAnswer.text, out UserAnswer))
