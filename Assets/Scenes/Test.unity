@@ -564,7 +564,7 @@ MonoBehaviour:
   EnterAnswer: {fileID: 1438423976}
   _minValue: 1
   _maxValue: 100
-  operation: 3
+  operation: 0
   RandomOperations: 1
 --- !u!4 &348245692
 Transform:

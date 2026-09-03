@@ -38,7 +38,7 @@ public class Equation : MonoBehaviour
 
     private Operations GetRandomOperations()
     {
-        Operations[] ops = { Operations.Add, Operations.Subtract, Operations.Multiply}; //,Operations.Division
+        Operations[] ops = { Operations.Add, Operations.Subtract, Operations.Multiply, Operations.Division};
         return ops[Random.Range(0, ops.Length)];
 
     }
