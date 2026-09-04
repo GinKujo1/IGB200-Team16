@@ -12,7 +12,11 @@ public class GameManager : MonoBehaviour
     public TMP_Text multiplierText;
     public TMP_Text timerText;
 
+    public GameObject homePanel;
+    public GameObject gameUI;
     public GameObject resultsPanel;
+    public GameObject pausePanel;
+    private bool isPaused = false;
 
     public TMP_Text finalScoreText;
     public TMP_Text questionsText;
@@ -32,6 +36,8 @@ public class GameManager : MonoBehaviour
     private int questionsAnswered = 0;
     private int correctAnswers = 0;
     private int bestStreak = 0;
+
+    
 
     private int correctAnswer;
     private string incorrectQuestions = "";
@@ -61,6 +67,46 @@ public class GameManager : MonoBehaviour
             EndGame();
         }
 
+        UpdateTimerUI();
+    }
+
+    public void StartGame()
+    {
+        // Hide the home screen
+        homePanel.SetActive(false);
+        gameUI.SetActive(true);
+
+        // Make sure the game is running
+        Time.timeScale = 1f;
+
+        gameActive = true;
+
+        // Enable the answer input
+        answerInput.interactable = true;
+
+        // Reset the game
+        score = 0;
+        streak = 0;
+        multiplier = 1;
+
+        questionsAnswered = 0;
+        correctAnswers = 0;
+        bestStreak = 0;
+
+        incorrectQuestions = "";
+
+        // Reset timer
+        timeRemaining = roundTime;
+
+        // Clear previous information
+        feedbackText.text = "";
+        answerInput.text = "";
+
+        // Generate first question
+        GenerateQuestion();
+
+        // Update UI
+        UpdateUI();
         UpdateTimerUI();
     }
 
@@ -172,9 +218,39 @@ public class GameManager : MonoBehaviour
         resultsPanel.SetActive(true);
     }
 
+    public void TogglePause()
+    {
+        isPaused = !isPaused;
+
+        pausePanel.SetActive(isPaused);
+
+        if (isPaused)
+        {
+            Time.timeScale = 0f;
+            answerInput.interactable = false;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            answerInput.interactable = true;
+        }
+    }
+
+    public void ResumeGame()
+    {
+        isPaused = false;
+
+        pausePanel.SetActive(false);
+
+        Time.timeScale = 1f;
+        answerInput.interactable = true;
+    }
+
     void EndGame()
     {
         gameActive = false;
+
+        Time.timeScale = 1f;
 
         feedbackText.text = "TIME'S UP!";
 
@@ -183,5 +259,64 @@ public class GameManager : MonoBehaviour
         ShowResults();
 
         Debug.Log("Game Over! Final Score: " + score);
+    }
+
+    public void PlayAgain()
+    {
+        Time.timeScale = 1f;
+
+        // Hide the results screen
+        resultsPanel.SetActive(false);
+
+        // Reset the game
+        score = 0;
+        streak = 0;
+        multiplier = 1;
+
+        questionsAnswered = 0;
+        correctAnswers = 0;
+        bestStreak = 0;
+
+        incorrectQuestions = "";
+
+        // Reset the timer
+        timeRemaining = roundTime;
+
+        // Allow the player to answer again
+        gameActive = true;
+        answerInput.interactable = true;
+
+        // Clear feedback and answer box
+        feedbackText.text = "";
+        answerInput.text = "";
+
+        // Generate a new question
+        GenerateQuestion();
+
+        // Update the UI
+        UpdateUI();
+        UpdateTimerUI();
+    }
+
+    public void ReturnHome()
+    {
+        // Stop the game
+        gameActive = false;
+
+        isPaused = false;
+
+        // Make sure time is running normally
+        Time.timeScale = 1f;
+
+        // Hide results
+        resultsPanel.SetActive(false);
+
+        gameUI.SetActive(false);
+
+        // Show home screen
+        homePanel.SetActive(true);
+
+        // Disable the answer input
+        answerInput.interactable = false;
     }
 }
