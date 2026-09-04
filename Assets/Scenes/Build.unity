@@ -324,7 +324,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -527, y: 282}
+  m_AnchoredPosition: {x: -471, y: 324}
   m_SizeDelta: {x: -1534.8616, y: -949.9352}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &122793556
@@ -1089,7 +1089,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 348245692}
-  - component: {fileID: 348245694}
+  - component: {fileID: 348245696}
   - component: {fileID: 348245695}
   m_Layer: 0
   m_Name: ButtonManager
@@ -1113,7 +1113,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 654438330}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &348245694
+--- !u!114 &348245695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348245689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b26494aaea6c7f4696f950b1e149bf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spawner
+  CorrectBuilding: {fileID: 2722345730822159068, guid: d56636af67175a34fb23427886d64cff, type: 3}
+  spawnerObject: {fileID: 46128215}
+--- !u!114 &348245696
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1133,21 +1147,7 @@ MonoBehaviour:
   _minValue: 0
   _maxValue: 100
   operation: 0
-  RandomOperations: 0
---- !u!114 &348245695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 348245689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b26494aaea6c7f4696f950b1e149bf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Spawner
-  CorrectBuilding: {fileID: 2722345730822159068, guid: d56636af67175a34fb23427886d64cff, type: 3}
-  spawnerObject: {fileID: 46128215}
+  RandomOperations: 1
 --- !u!1001 &374312464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1550,7 +1550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -685, y: 229}
+  m_AnchoredPosition: {x: -595, y: 229}
   m_SizeDelta: {x: -1745.4747, y: -1003.7123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &620535189
@@ -2157,7 +2157,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 348245694}
+      - m_Target: {fileID: 348245696}
         m_TargetAssemblyTypeName: Equation, Assembly-CSharp
         m_MethodName: NewEquation
         m_Mode: 1
@@ -2791,7 +2791,19 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 348245696}
+        m_TargetAssemblyTypeName: Equation, Assembly-CSharp
+        m_MethodName: CheckAnswer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -3441,7 +3453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
+  m_ScaleFactor: 0.6
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
@@ -4146,11 +4158,11 @@ MonoBehaviour:
   SFXList:
   - sfxType: 0
     audioClip: {fileID: 8300000, guid: a923762c1e76cb04a89da9c250a5aa20, type: 3}
-  - sfxType: 0
+  - sfxType: 1
     audioClip: {fileID: 8300000, guid: 7053d77d69611604283fd226c871a1de, type: 3}
-  - sfxType: 0
+  - sfxType: 2
     audioClip: {fileID: 8300000, guid: e9600ef3cf5d587498c5b3b3a5c47368, type: 3}
-  - sfxType: 0
+  - sfxType: 3
     audioClip: {fileID: 8300000, guid: 0c2c01236181b22489458e060b2e7fde, type: 3}
 --- !u!4 &2139037459
 Transform:

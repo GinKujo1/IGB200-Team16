@@ -19,7 +19,7 @@ public class Equation : MonoBehaviour
     public int _minValue = 0;
     public int _maxValue = 100;
 
-    public enum Operations { Add, Subtract, Multiply, Division };
+    public enum Operations { Add, Subtract, Multiply, Division};
     public Operations operation = Operations.Add;
 
     public bool RandomOperations = false;
@@ -79,6 +79,7 @@ public class Equation : MonoBehaviour
             GenerateDivision();
                break;
         }
+        
         Number1Text.text = Number1.ToString();
         Number2Text.text = Number2.ToString();
         OperationTypes.text = GetOperationSymbol(operation);
@@ -115,9 +116,10 @@ public class Equation : MonoBehaviour
         int divisorMax = Mathf.Min(_maxValue, 12); 
 
         Number2 = Random.Range(divisorMin, divisorMax + 1);          
-        Answer = Random.Range(_minValue, _maxValue + 1);              
+        Answer = Random.Range(divisorMin, divisorMax + 1);              
         Number1 = Number2 * Answer;                                  
     }
+    
     public void CheckAnswer()
     {
         if (!int.TryParse(EnterAnswer.text, out UserAnswer))
