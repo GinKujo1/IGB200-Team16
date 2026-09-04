@@ -1146,7 +1146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b26494aaea6c7f4696f950b1e149bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
-  CorrectBuilding: {fileID: 6486698581034566682, guid: 86f4a7cba8a64da45a6669aacdbf8554, type: 3}
+  CorrectBuilding: {fileID: 2722345730822159068, guid: d56636af67175a34fb23427886d64cff, type: 3}
   spawnerObject: {fileID: 46128215}
 --- !u!1001 &374312464
 PrefabInstance:
@@ -3147,6 +3147,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 380062910}
     m_Modifications:
+    - target: {fileID: 2073640238911866842, guid: 86f4a7cba8a64da45a6669aacdbf8554, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a6937ad75aee1964faffe191bf3e67d0, type: 2}
+    - target: {fileID: 2300582491032100178, guid: 86f4a7cba8a64da45a6669aacdbf8554, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a6937ad75aee1964faffe191bf3e67d0, type: 2}
+    - target: {fileID: 5328550258030452448, guid: 86f4a7cba8a64da45a6669aacdbf8554, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 74ef9a30146a6b2418d811efec63fcfe, type: 2}
     - target: {fileID: 6486698581034566682, guid: 86f4a7cba8a64da45a6669aacdbf8554, type: 3}
       propertyPath: m_Name
       value: BuildingNew1 Variant
@@ -3191,6 +3203,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8175891166335680267, guid: 86f4a7cba8a64da45a6669aacdbf8554, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1e92d53975759bf46a54db563bf825a4, type: 2}
+    - target: {fileID: 8943425456238168070, guid: 86f4a7cba8a64da45a6669aacdbf8554, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5da351e7d69c52441ac4af7a5b565434, type: 2}
     m_RemovedComponents:
     - {fileID: 3533635786779723413, guid: 86f4a7cba8a64da45a6669aacdbf8554, type: 3}
     m_RemovedGameObjects: []
@@ -3524,7 +3544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
+  m_ScaleFactor: 0.65
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
