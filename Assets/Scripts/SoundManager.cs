@@ -52,7 +52,7 @@ public class SoundManager : MonoBehaviour
         return null;
     }
 
-    public static void PlaySoundEffect(SFXType sfxType) {
+    public void PlaySoundEffect(SFXType sfxType) {
         AudioClip clip = Instance.GetAudioFromSoundList(sfxType);
         if (clip != null) {
             Instance.audioSource.PlayOneShot(clip);
