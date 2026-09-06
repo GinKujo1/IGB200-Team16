@@ -49,17 +49,20 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.20f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ButtonManaget\StartButton.cs" />
     <Compile Include="Assets\Scripts\PlaySoundOnCollision.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\TutorialInfo\Readme.cs" />
+    <Compile Include="Assets\Scripts\ButtonManaget\ResultButton.cs" />
     <Compile Include="Assets\Scripts\CameraBehavior.cs" />
     <Compile Include="Assets\Scripts\Timer_Multiplier.cs" />
+    <Compile Include="Assets\Scripts\ButtonManaget\GameManager.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
-    <Compile Include="Assets\Scripts\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\ButtonManaget\SceneLoader.cs" />
+    <Compile Include="Assets\Scripts\ButtonManaget\PauseButton.cs" />
     <Compile Include="Assets\Scripts\Equation.cs" />
     <Compile Include="Assets\Scripts\GravityMod.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\SceneLoader.cs" />
+    <Compile Include="Assets\Scripts\ButtonManaget\SoundManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
