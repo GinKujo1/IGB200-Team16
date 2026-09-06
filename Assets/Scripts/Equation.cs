@@ -16,6 +16,10 @@ public class Equation : MonoBehaviour
     private TMP_Text OperationTypes;
     [SerializeField]
     private TMP_InputField EnterAnswer;
+    public TMP_Text scoreText;
+    public TMP_Text finalScoreText;
+
+
     public int _minValue = 0;
     public int _maxValue = 100;
 
@@ -29,6 +33,7 @@ public class Equation : MonoBehaviour
     private int Number2;
     private int Answer;
     private int UserAnswer;
+    private int score = 0;
 
 
     private int RandomNumber()

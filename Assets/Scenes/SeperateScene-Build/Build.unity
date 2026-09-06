@@ -2040,6 +2040,8 @@ MonoBehaviour:
   FeedbackText: {fileID: 1962319521}
   OperationTypes: {fileID: 611802712}
   EnterAnswer: {fileID: 1438423976}
+  scoreText: {fileID: 0}
+  finalScoreText: {fileID: 0}
   _minValue: 0
   _maxValue: 100
   operation: 0
@@ -4026,8 +4028,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d19f9cf2b2f1a49bc7bc5087b02630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResultButton
-  ResultPanel: {fileID: 0}
-  EquationPanel: {fileID: 0}
+  ResultPanel: {fileID: 950591819}
+  EquationPanel: {fileID: 1872859378}
 --- !u!1 &1006784351
 GameObject:
   m_ObjectHideFlags: 0

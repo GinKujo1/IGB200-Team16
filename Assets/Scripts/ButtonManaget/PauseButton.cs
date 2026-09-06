@@ -15,7 +15,8 @@ public class PauseButton : MonoBehaviour
     public void Resume()
     {
         PausePanel.SetActive(false);
-  
+        EquationPanel.SetActive(true);
+
     }
 
     public void LoadSceneByName()
