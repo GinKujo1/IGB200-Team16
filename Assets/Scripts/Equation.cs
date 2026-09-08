@@ -6,6 +6,8 @@ using Unity.VisualScripting;
 
 public class Equation : MonoBehaviour
 {
+
+    //Assign TMP/Canvas 
     [SerializeField]
     private TMP_Text Number1Text;
     [SerializeField]
