@@ -2,6 +2,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+using UnityEngine.InputSystem;
+
 
 
 public class Equation : MonoBehaviour
@@ -94,7 +96,8 @@ public class Equation : MonoBehaviour
 
     private void GenerateAddition()
     {
-
+        Mathf.Min(_minValue = 0);
+        Mathf.Max(_maxValue = 100);
 
         Number1 = RandomNumber();
         Number2 = RandomNumber();
@@ -102,6 +105,8 @@ public class Equation : MonoBehaviour
     }
     private void GenerateSubtraction()
     {
+        Mathf.Min(_minValue = 0);
+        Mathf.Max(_maxValue = 100);
 
 
         Number1 = RandomNumber();
@@ -110,20 +115,20 @@ public class Equation : MonoBehaviour
     }
     private void GenerateMultiplication()
     {
-        int multMin = Mathf.Min(_maxValue = 1);
-        int multMax = Mathf.Max(_minValue = 12);
+        Mathf.Min(_maxValue = 1);
+        Mathf.Max(_minValue = 12);
 
-        Number1 = Random.Range(multMin, multMax + 1);
-        Number2 = Random.Range(multMin, multMax + 1);
+        Number1 = Random.Range(_minValue, _maxValue + 1);
+        Number2 = Random.Range(_minValue, _maxValue + 1);
         Answer = Number1 * Number2;
     }
     private void GenerateDivision()
     {
-        int divisorMin = Mathf.Max(_minValue, 1);
-        int divisorMax = Mathf.Min(_maxValue, 12); 
+        Mathf.Max(_minValue, 1);
+        Mathf.Min(_maxValue, 12); 
 
-        Number2 = Random.Range(divisorMin, divisorMax + 1);          
-        Answer = Random.Range(divisorMin, divisorMax + 1);              
+        Number2 = Random.Range(_minValue, _maxValue + 1);          
+        Answer = Random.Range(_minValue, _maxValue + 1);              
         Number1 = Number2 * Answer;                                  
     }
     
@@ -145,6 +150,13 @@ public class Equation : MonoBehaviour
         }
     }
 
+        void Update()
+    {
+        if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
+        {
+            NewEquation();
+        }
+    }
     public void NewEquation()
     {
         EnterAnswer.text = null;
