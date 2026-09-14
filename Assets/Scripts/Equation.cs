@@ -1,8 +1,9 @@
-using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 
 
@@ -23,7 +24,8 @@ public class Equation : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text finalScoreText;
 
-
+    private Camera main;
+    [SerializeField] private GameObject spawner;
     public int _minValue = 0;
     public int _maxValue = 100;
 
@@ -143,6 +145,10 @@ public class Equation : MonoBehaviour
         if (UserAnswer == Answer)
         {
             FeedbackText.text = "CORRECT";
+            ScoreUp(100, 1);
+            main.GetComponent<CameraBehavior>().MoveCameraUp();
+            spawner.GetComponent<Spawner>().SpawnBuilding();
+            displayScore();
         }
         else
         {
@@ -163,8 +169,20 @@ public class Equation : MonoBehaviour
         FeedbackText.text = null;
         GenerateEquation();
     }
+
+    private void ScoreUp(int value, int multiplier = 1)
+    {
+       score += value * multiplier;
+    }
+    private void displayScore() // dirty local function should probs call from the ui script.
+    {
+        scoreText.text = $"Score: {score:D4} ";
+    }
+
     private void Start()
     {
+        main = Camera.main;
+        displayScore();
         GenerateEquation();
     } 
 }

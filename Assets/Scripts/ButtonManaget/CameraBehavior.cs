@@ -6,13 +6,18 @@ using UnityEngine;
 
 public class CameraBehavior : MonoBehaviour
 {
-    
+    [Header("Initial Values")]
     [SerializeField] private Vector3 rotationVector;
     [SerializeField] private float yOffset;
     [SerializeField] private float zOffset;
     [SerializeField] private float dampTime = 0.3f;   // Smoothing time
-
     [SerializeField] private float stopThreshold = 0.1f;
+
+
+    [Header("Movement Amount")]
+    [SerializeField] private float cameraMoveAmount = 100f; 
+
+    
     private bool isMoving = true;
 
     private Vector3 velocity = Vector3.zero;
@@ -51,5 +56,12 @@ public class CameraBehavior : MonoBehaviour
         targetPos = currentPos + new Vector3(0, value, 0);
         isMoving = true;
     }
-    
+
+    public void MoveCameraUp()
+    {
+        currentPos = this.transform.position;
+        targetPos = currentPos + new Vector3(0, cameraMoveAmount, 0);
+        isMoving = true;
+    }
+
 }

@@ -11,14 +11,15 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.enterKey.wasPressedThisFrame)
-        {
-            SpawnBuilding();
-        }
+        //if (Keyboard.current.enterKey.wasPressedThisFrame || Keyboard.current.numpadEnterKey.wasPressedThisFrame)
+        //{
+        //    SpawnBuilding();
+        //}
     }
 
     public void SpawnBuilding()
     {
+        Debug.Log("spawned Building");
         Vector3 spawnPositon = spawnerObject.position;
         Quaternion spawnRotation = spawnerObject.rotation;
         Instantiate(CorrectBuilding, spawnPositon, spawnRotation);
