@@ -1945,7 +1945,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 89ed59e88d106cc439794125bb88bf19, type: 2}
+  - {fileID: 2100000, guid: cff0e9d56b07fc342b8af8d89ca79304, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2085,10 +2085,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1806680513116206669, guid: 8d65724ef7c0ae84faa2b18bac1a0a8f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f2fa7f038d365c4ea7d849086d8b2b9, type: 2}
     - target: {fileID: 919132149155446097, guid: 8d65724ef7c0ae84faa2b18bac1a0a8f, type: 3}
       propertyPath: m_Name
       value: Lightpole
       objectReference: {fileID: 0}
+    - target: {fileID: 6745302439343835087, guid: 8d65724ef7c0ae84faa2b18bac1a0a8f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f2fa7f038d365c4ea7d849086d8b2b9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3109,7 +3117,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: deec7bf5cf7be2e4e8111c041a01cf87, type: 2}
+  - {fileID: 2100000, guid: e7703382f00039a41a7ec5d72d66970f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

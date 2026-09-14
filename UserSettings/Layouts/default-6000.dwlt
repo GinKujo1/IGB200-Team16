@@ -587,15 +587,14 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs:
-      - m_Data: -5248
+      - m_Data: 47674
       m_LastClickedID:
-        m_Data: -5248
+        m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -5248
-      - m_Data: -5106
+      - m_Data: -21762
+      - m_Data: -21040
       - m_Data: -1334
-      - m_Data: 46924
-      - m_Data: 47904
+      - m_Data: 46926
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -721,7 +720,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Models/Street Decoration
+    - Assets/Scenes
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -743,14 +742,16 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 47468
-    - m_Data: 47470
-    - m_Data: 47472
-    - m_Data: 47474
-    - m_Data: 47476
-    - m_Data: 47478
-    - m_Data: 47480
-    - m_Data: 47482
+    - m_Data: 47506
+    - m_Data: 47508
+    - m_Data: 47510
+    - m_Data: 47512
+    - m_Data: 47514
+    - m_Data: 47516
+    - m_Data: 47518
+    - m_Data: 47520
+    - m_Data: 47522
+    - m_Data: 47524
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -779,25 +780,29 @@ MonoBehaviour:
   m_AssetTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: -5248
+    - m_Data: 47674
     m_LastClickedID:
-      m_Data: 0
+      m_Data: 47674
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 47468
-    - m_Data: 47470
-    - m_Data: 47472
-    - m_Data: 47474
-    - m_Data: 47476
-    - m_Data: 47478
-    - m_Data: 47480
-    - m_Data: 47482
-    - m_Data: 47608
-    - m_Data: 47972
+    - m_Data: 47506
+    - m_Data: 47508
+    - m_Data: 47510
+    - m_Data: 47512
+    - m_Data: 47514
+    - m_Data: 47516
+    - m_Data: 47518
+    - m_Data: 47520
+    - m_Data: 47522
+    - m_Data: 47524
+    - m_Data: 47652
+    - m_Data: 47700
+    - m_Data: 47710
+    - m_Data: 48344
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Street Decoration
-      m_OriginalName: Street Decoration
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
@@ -805,10 +810,10 @@ MonoBehaviour:
         width: 0
         height: 0
       m_UserData:
-        m_Data: 47972
+        m_Data: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 8}
@@ -821,8 +826,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: -5248
-    m_LastClickedInstanceID: -5248
+    - m_Data: 47674
+    m_LastClickedInstanceID: 47674
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
@@ -1552,9 +1557,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 956.99084, y: -925.85406, z: 182.06029}
+    m_Target: {x: 1183.4253, y: -816.02985, z: 1150.9401}
     speed: 2
-    m_Value: {x: -70.38506, y: 143.69716, z: 20.787752}
+    m_Value: {x: 1183.4253, y: -816.02985, z: 1150.9401}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1600,20 +1605,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.195083, y: -0.6759103, z: 0.19275938, w: -0.68406355}
+    m_Target: {x: -0.16372865, y: -0.3844867, z: 0.069475815, w: -0.90584177}
     speed: 2
-    m_Value: {x: -0.16915663, y: 0.2503547, z: -0.04447394, w: -0.9522242}
+    m_Value: {x: -0.16362317, y: -0.38584247, z: 0.06972087, w: -0.905258}
   m_Size:
     m_Target: 1465.322
     speed: 2
-    m_Value: 1402.222
+    m_Value: 1465.322
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 2
+    m_SpeedNormalized: 1
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
