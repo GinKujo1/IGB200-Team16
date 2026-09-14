@@ -117,20 +117,20 @@ public class Equation : MonoBehaviour
     }
     private void GenerateMultiplication()
     {
-        Mathf.Min(_maxValue = 1);
-        Mathf.Max(_minValue = 12);
+        Mathf.Min(_minValue = 1);
+        Mathf.Max(_maxValue = 12);
 
-        Number1 = Random.Range(_minValue, _maxValue + 1);
-        Number2 = Random.Range(_minValue, _maxValue + 1);
+        Number1 = RandomNumber();
+        Number2 = RandomNumber();
         Answer = Number1 * Number2;
     }
     private void GenerateDivision()
     {
-        Mathf.Max(_minValue, 1);
-        Mathf.Min(_maxValue, 12); 
+        Mathf.Min(_minValue = 1);
+        Mathf.Max(_maxValue = 12); 
 
-        Number2 = Random.Range(_minValue, _maxValue + 1);          
-        Answer = Random.Range(_minValue, _maxValue + 1);              
+        Number2 = RandomNumber();        
+        Answer = RandomNumber();       
         Number1 = Number2 * Answer;                                  
     }
     
