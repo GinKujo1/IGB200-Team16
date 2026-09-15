@@ -534,6 +534,7 @@ MonoBehaviour:
   zOffset: -600
   dampTime: 0.3
   stopThreshold: 0.01
+  cameraMoveAmount: 100
 --- !u!82 &330585549
 AudioSource:
   m_ObjectHideFlags: 0
@@ -715,10 +716,11 @@ MonoBehaviour:
   EnterAnswer: {fileID: 1950263043892802660}
   scoreText: {fileID: 0}
   finalScoreText: {fileID: 0}
+  spawner: {fileID: 0}
   _minValue: 0
   _maxValue: 100
-  operation: 0
-  RandomOperations: 1
+  operation: 3
+  RandomOperations: 0
 --- !u!1001 &374312464
 PrefabInstance:
   m_ObjectHideFlags: 0

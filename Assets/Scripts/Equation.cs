@@ -186,8 +186,11 @@ public class Equation : MonoBehaviour
 
     private void Start()
     {
+        GenerateEquation();
+        EnterAnswer.Select();
+        EnterAnswer.ActivateInputField();
         main = Camera.main;
         displayScore();
-        GenerateEquation();
     } 
+ 
 }
