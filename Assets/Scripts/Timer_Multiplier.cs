@@ -9,7 +9,7 @@ public class Timer_Multiplier : MonoBehaviour
     private bool isTimerRunning = false;
     [Tooltip("Adjusts Timer seconds")]
     [SerializeField] private float multiplierTimer = 11f;
-    private float timeRemaining;
+    public float timeRemaining;
 
 
     private void Start()

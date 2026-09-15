@@ -718,7 +718,9 @@ MonoBehaviour:
   scoreText: {fileID: 1971671306}
   finalScoreText: {fileID: 0}
   full: {fileID: 1390693268}
+  multiText: {fileID: 1911855399}
   spawner: {fileID: 46128214}
+  timerMulti: {fileID: 1576578963}
   _minValue: 0
   _maxValue: 100
   operation: 0
@@ -1836,6 +1838,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 210792331}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1576578963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1563281465828007925, guid: 62b14959ac1c28c4a838cfdcdfbad198, type: 3}
+  m_PrefabInstance: {fileID: 4756551271061128810}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1580440384
 GameObject:
   m_ObjectHideFlags: 0

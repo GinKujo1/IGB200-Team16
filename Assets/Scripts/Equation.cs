@@ -27,8 +27,12 @@ public class Equation : MonoBehaviour
     [SerializeField]
     private TMP_Text full;
 
+    [SerializeField]
+    private TMP_Text multiText;
+
     private Camera main;
     [SerializeField] private GameObject spawner;
+    [SerializeField] private GameObject timerMulti;
     public int _minValue = 0;
     public int _maxValue = 100;
 
@@ -42,7 +46,8 @@ public class Equation : MonoBehaviour
     private int Number2;
     private int Answer;
     private int UserAnswer;
-    private int score = 0;
+    private float score = 0;
+    private float multi = 1;
 
 
     private int RandomNumber()
@@ -150,24 +155,39 @@ public class Equation : MonoBehaviour
         if (UserAnswer == Answer)
         {
             FeedbackText.text = "CORRECT";
-            ScoreUp(100, 1);
+
+            if(timerMulti.GetComponent<Timer_Multiplier>().timeRemaining > 0)
+            {
+                MultiUp(0.1f);
+                displayMulti();
+            }
+            ScoreUp(100, multi);
             main.GetComponent<CameraBehavior>().MoveCameraUp();
             spawner.GetComponent<Spawner>().SpawnBuilding();
+            timerMulti.GetComponent<Timer_Multiplier>().nextQuestion();
             displayScore();
+            GenerateEquation();
         }
         else
         {
             FeedbackText.text = $"INCORRECT, the answer was {Answer}.";
+            resetMulti();
+            displayMulti();
+            timerMulti.GetComponent<Timer_Multiplier>().nextQuestion();
+            GenerateEquation();
         }
     }
 
         void Update()
-    {
-        if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
         {
-            NewEquation();
+            if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
+            {
+                //NewEquation();
+            }
+        displayMulti();
+        EnterAnswer.Select();
+        EnterAnswer.ActivateInputField();
         }
-    }
     public void NewEquation()
     {
         EnterAnswer.text = null;
@@ -175,7 +195,21 @@ public class Equation : MonoBehaviour
         GenerateEquation();
     }
 
-    private void ScoreUp(int value, int multiplier = 1)
+
+    private void MultiUp(float value)
+    {
+        multi += value; // added a cap later
+    }
+    private void resetMulti()
+    {
+        multi = 1.0f;
+    }
+
+    private void displayMulti() // dirty local function should probs call from the ui script.
+    {
+        multiText.text = $"{multi:F1}x ";
+    }
+    private void ScoreUp(int value, float multiplier = 1)
     {
        score += value * multiplier;
     }
@@ -187,10 +221,9 @@ public class Equation : MonoBehaviour
     private void Start()
     {
         GenerateEquation();
-        EnterAnswer.Select();
-        EnterAnswer.ActivateInputField();
         main = Camera.main;
         displayScore();
+        displayMulti();
     } 
  
 }
