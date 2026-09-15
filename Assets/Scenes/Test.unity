@@ -562,6 +562,8 @@ MonoBehaviour:
   FeedbackText: {fileID: 2063149446}
   OperationTypes: {fileID: 611802712}
   EnterAnswer: {fileID: 1438423976}
+  scoreText: {fileID: 0}
+  finalScoreText: {fileID: 0}
   _minValue: 1
   _maxValue: 100
   operation: 0

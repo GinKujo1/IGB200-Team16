@@ -2,6 +2,9 @@ using UnityEngine;
 using TMPro;
 public class Timer : MonoBehaviour
 {
+    public GameObject ResultsMenu;
+    public GameObject EquationPanel;
+
     //private float timeRemaining = 60f;
     [SerializeField] private TextMeshProUGUI timerText;
 
@@ -29,7 +32,8 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                Debug.Log("Time has run out!");
+                EquationPanel.SetActive(false);
+                ResultsMenu.SetActive(true);
                 timerConverted = 0;
                 isTimerRunning = false;
                 DisplayTime(timerConverted);
@@ -45,4 +49,5 @@ public class Timer : MonoBehaviour
 
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+    
 }

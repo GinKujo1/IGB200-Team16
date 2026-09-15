@@ -1,11 +1,16 @@
-using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
+
 
 
 public class Equation : MonoBehaviour
 {
+
+    //Assign TMP/Canvas 
     [SerializeField]
     private TMP_Text Number1Text;
     [SerializeField]
@@ -16,10 +21,22 @@ public class Equation : MonoBehaviour
     private TMP_Text OperationTypes;
     [SerializeField]
     private TMP_InputField EnterAnswer;
+    public TMP_Text scoreText;
+    public TMP_Text finalScoreText;
+
+    [SerializeField]
+    private TMP_Text full;
+
+    [SerializeField]
+    private TMP_Text multiText;
+
+    private Camera main;
+    [SerializeField] private GameObject spawner;
+    [SerializeField] private GameObject timerMulti;
     public int _minValue = 0;
     public int _maxValue = 100;
 
-    public enum Operations { Add, Subtract, Multiply, Division };
+    public enum Operations { Add, Subtract, Multiply, Division};
     public Operations operation = Operations.Add;
 
     public bool RandomOperations = false;
@@ -29,6 +46,8 @@ public class Equation : MonoBehaviour
     private int Number2;
     private int Answer;
     private int UserAnswer;
+    private float score = 0;
+    private float multi = 1;
 
 
     private int RandomNumber()
@@ -79,14 +98,18 @@ public class Equation : MonoBehaviour
             GenerateDivision();
                break;
         }
+        
         Number1Text.text = Number1.ToString();
         Number2Text.text = Number2.ToString();
         OperationTypes.text = GetOperationSymbol(operation);
+
+        full.text = $"{Number1} {GetOperationSymbol(operation)} {Number2} =";
     }
 
     private void GenerateAddition()
     {
-
+        Mathf.Min(_minValue = 0);
+        Mathf.Max(_maxValue = 100);
 
         Number1 = RandomNumber();
         Number2 = RandomNumber();
@@ -94,6 +117,8 @@ public class Equation : MonoBehaviour
     }
     private void GenerateSubtraction()
     {
+        Mathf.Min(_minValue = 0);
+        Mathf.Max(_maxValue = 100);
 
 
         Number1 = RandomNumber();
@@ -102,22 +127,23 @@ public class Equation : MonoBehaviour
     }
     private void GenerateMultiplication()
     {
-        int multMin = Mathf.Min(_maxValue = 1);
-        int multMax = Mathf.Max(_minValue = 12);
+        Mathf.Min(_minValue = 1);
+        Mathf.Max(_maxValue = 12);
 
-        Number1 = Random.Range(multMin, multMax + 1);
-        Number2 = Random.Range(multMin, multMax + 1);
+        Number1 = RandomNumber();
+        Number2 = RandomNumber();
         Answer = Number1 * Number2;
     }
     private void GenerateDivision()
     {
-        int divisorMin = Mathf.Max(_minValue, 1);
-        int divisorMax = Mathf.Min(_maxValue, 12); 
+        Mathf.Min(_minValue = 1);
+        Mathf.Max(_maxValue = 12); 
 
-        Number2 = Random.Range(divisorMin, divisorMax + 1);          
-        Answer = Random.Range(_minValue, _maxValue + 1);              
+        Number2 = RandomNumber();        
+        Answer = RandomNumber();       
         Number1 = Number2 * Answer;                                  
     }
+    
     public void CheckAnswer()
     {
         if (!int.TryParse(EnterAnswer.text, out UserAnswer))
@@ -129,21 +155,75 @@ public class Equation : MonoBehaviour
         if (UserAnswer == Answer)
         {
             FeedbackText.text = "CORRECT";
+
+            if(timerMulti.GetComponent<Timer_Multiplier>().timeRemaining > 0)
+            {
+                MultiUp(0.1f);
+                displayMulti();
+            }
+            ScoreUp(100, multi);
+            main.GetComponent<CameraBehavior>().MoveCameraUp();
+            spawner.GetComponent<Spawner>().SpawnBuilding();
+            timerMulti.GetComponent<Timer_Multiplier>().nextQuestion();
+            displayScore();
+            GenerateEquation();
         }
         else
         {
             FeedbackText.text = $"INCORRECT, the answer was {Answer}.";
+            resetMulti();
+            displayMulti();
+            timerMulti.GetComponent<Timer_Multiplier>().nextQuestion();
+            GenerateEquation();
         }
     }
 
+        void Update()
+        {
+            if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
+            {
+                //NewEquation();
+            }
+        displayMulti();
+        EnterAnswer.Select();
+        EnterAnswer.ActivateInputField();
+        }
     public void NewEquation()
     {
         EnterAnswer.text = null;
         FeedbackText.text = null;
         GenerateEquation();
     }
+
+
+    private void MultiUp(float value)
+    {
+        multi += value; // added a cap later
+    }
+    private void resetMulti()
+    {
+        multi = 1.0f;
+    }
+
+    private void displayMulti() // dirty local function should probs call from the ui script.
+    {
+        multiText.text = $"{multi:F1}x ";
+    }
+    private void ScoreUp(int value, float multiplier = 1)
+    {
+       score += value * multiplier;
+    }
+    private void displayScore() // dirty local function should probs call from the ui script.
+    {
+        scoreText.text = $"Score: {score:D4} ";
+    }
+
     private void Start()
     {
         GenerateEquation();
+        main = Camera.main;
+        displayScore();
+        displayMulti();
     } 
+ 
 }
