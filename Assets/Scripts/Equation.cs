@@ -24,6 +24,9 @@ public class Equation : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text finalScoreText;
 
+    [SerializeField]
+    private TMP_Text full;
+
     private Camera main;
     [SerializeField] private GameObject spawner;
     public int _minValue = 0;
@@ -94,6 +97,8 @@ public class Equation : MonoBehaviour
         Number1Text.text = Number1.ToString();
         Number2Text.text = Number2.ToString();
         OperationTypes.text = GetOperationSymbol(operation);
+
+        full.text = $"{Number1} {GetOperationSymbol(operation)} {Number2} =";
     }
 
     private void GenerateAddition()
