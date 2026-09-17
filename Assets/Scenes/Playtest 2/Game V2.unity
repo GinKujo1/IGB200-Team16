@@ -721,7 +721,7 @@ MonoBehaviour:
   _minValue: 0
   _maxValue: 100
   operation: 0
-  RandomOperations: 1
+  RandomOperations: 0
 --- !u!1 &349435633
 GameObject:
   m_ObjectHideFlags: 0

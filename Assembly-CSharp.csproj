@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ButtonManaget\StartButton.cs" />
+    <Compile Include="Assets\Scripts\ScoreBoardInterface.cs" />
     <Compile Include="Assets\Scripts\PlaySoundOnCollision.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\TutorialInfo\Readme.cs" />
