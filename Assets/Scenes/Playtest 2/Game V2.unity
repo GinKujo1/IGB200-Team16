@@ -2408,6 +2408,10 @@ PrefabInstance:
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 693391323985296389, guid: 62b14959ac1c28c4a838cfdcdfbad198, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 816026011723585209, guid: 62b14959ac1c28c4a838cfdcdfbad198, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -152
@@ -2443,6 +2447,14 @@ PrefabInstance:
     - target: {fileID: 1316624665803462591, guid: 62b14959ac1c28c4a838cfdcdfbad198, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -292
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592442520509550033, guid: 62b14959ac1c28c4a838cfdcdfbad198, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1234
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592442520509550033, guid: 62b14959ac1c28c4a838cfdcdfbad198, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 467
       objectReference: {fileID: 0}
     - target: {fileID: 1657102619404931769, guid: 62b14959ac1c28c4a838cfdcdfbad198, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2707,6 +2719,10 @@ PrefabInstance:
     - target: {fileID: 6847532797026973739, guid: 62b14959ac1c28c4a838cfdcdfbad198, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6886647791553963539, guid: 62b14959ac1c28c4a838cfdcdfbad198, type: 3}
+      propertyPath: timerTime
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7644577756750654678, guid: 62b14959ac1c28c4a838cfdcdfbad198, type: 3}
       propertyPath: m_SizeDelta.x
