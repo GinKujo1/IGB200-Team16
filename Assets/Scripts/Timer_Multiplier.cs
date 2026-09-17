@@ -42,7 +42,7 @@ public class Timer_Multiplier : MonoBehaviour
     }
     public void nextQuestion()
     {
-        Debug.Log("Next question");
+        //Debug.Log("Next question");
         timeRemaining = multiplierTimer;
         isTimerRunning = true;
     }

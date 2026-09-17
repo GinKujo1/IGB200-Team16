@@ -11,21 +11,22 @@ public class Equation : MonoBehaviour
 {
 
     //Assign TMP/Canvas 
-    [SerializeField]
-    private TMP_Text Number1Text;
-    [SerializeField]
-    private TMP_Text Number2Text;
+    //[SerializeField]
+    //private TMP_Text Number1Text;
+    //[SerializeField]
+    //private TMP_Text Number2Text;
+    //[SerializeField]
+    //private TMP_Text OperationTypes;
+
     [SerializeField]
     private TMP_Text FeedbackText;
-    [SerializeField]
-    private TMP_Text OperationTypes;
     [SerializeField]
     private TMP_InputField EnterAnswer;
     public TMP_Text scoreText;
     public TMP_Text finalScoreText;
 
     [SerializeField]
-    private TMP_Text full;
+    private TMP_Text equationText;
 
     [SerializeField]
     private TMP_Text multiText;
@@ -99,11 +100,11 @@ public class Equation : MonoBehaviour
                break;
         }
         
-        Number1Text.text = Number1.ToString();
-        Number2Text.text = Number2.ToString();
-        OperationTypes.text = GetOperationSymbol(operation);
+        //Number1Text.text = Number1.ToString();
+        //Number2Text.text = Number2.ToString();
+        //OperationTypes.text = GetOperationSymbol(operation);
 
-        full.text = $"{Number1} {GetOperationSymbol(operation)} {Number2} =";
+        equationText.text = $"{Number1} {GetOperationSymbol(operation)} {Number2} =";
     }
 
     private void GenerateAddition()
@@ -149,6 +150,7 @@ public class Equation : MonoBehaviour
         if (!int.TryParse(EnterAnswer.text, out UserAnswer))
         {
             FeedbackText.text = "Please enter a valid number";
+            EnterAnswer.text = null;
             return;
         }
 
@@ -166,7 +168,7 @@ public class Equation : MonoBehaviour
             spawner.GetComponent<Spawner>().SpawnBuilding();
             timerMulti.GetComponent<Timer_Multiplier>().nextQuestion();
             displayScore();
-            GenerateEquation();
+            NewEquation();
         }
         else
         {
@@ -174,16 +176,16 @@ public class Equation : MonoBehaviour
             resetMulti();
             displayMulti();
             timerMulti.GetComponent<Timer_Multiplier>().nextQuestion();
-            GenerateEquation();
+            NewEquation();
         }
     }
 
         void Update()
         {
-            if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
-            {
-                //NewEquation();
-            }
+            //if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
+            //{
+            //    //NewEquation();
+            //}
         displayMulti();
         EnterAnswer.Select();
         EnterAnswer.ActivateInputField();
@@ -215,11 +217,17 @@ public class Equation : MonoBehaviour
     }
     private void displayScore() // dirty local function should probs call from the ui script.
     {
-        scoreText.text = $"Score: {score:D4} ";
+        scoreText.text = score.ToString("0000");
     }
 
     private void Start()
     {
+        EnterAnswer.onEndEdit.AddListener(var => {
+            if (Keyboard.current.enterKey.wasPressedThisFrame || Keyboard.current.numpadEnterKey.wasPressedThisFrame)
+                Debug.Log("End edit on enter");
+
+        });
+
         GenerateEquation();
         main = Camera.main;
         displayScore();
