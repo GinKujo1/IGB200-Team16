@@ -37,6 +37,9 @@ public class Timer : MonoBehaviour
                 timerConverted = 0;
                 isTimerRunning = false;
                 DisplayTime(timerConverted);
+
+                //OnGameOver(EquationPanel.GetComponent<Equation>().Score); // getting score and added it to scoreboard.
+                OnGameOver(100);
             }
         }
     }
@@ -49,5 +52,30 @@ public class Timer : MonoBehaviour
 
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
-    
+
+    public void OnGameOver(float finalScore) // temporary position for this function // Option 1: Prompt for name via UI InputField
+                                                                    // Option 2: Use a default name(set at start or something or account based)
+    {
+        if (ScoreBoardManager.Instance.QualifiesForLeaderboard(finalScore))
+        {
+           
+            string playerName = "Player"; // Replace with UI input
+
+            ScoreBoardManager.Instance.AddScore(playerName, finalScore);
+        }
+    }
+
+    //potentially submit score button
+    //TMP_InputField nameInput;
+    //public void SubmitScore(int finalScore)
+    //{
+    //    string playerName = string.IsNullOrWhiteSpace(nameInput.text)
+    //        ? "Some Student"
+    //        : nameInput.text;
+    //
+    //    // Trim to avoid absurdly long names
+    //    if (playerName.Length > 12) playerName = playerName.Substring(0, 12);
+    //
+    //    ScoreBoardManager.Instance.AddScore(playerName, finalScore);
+    //}
 }

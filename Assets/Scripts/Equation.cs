@@ -9,7 +9,6 @@ using UnityEngine.UI;
 
 public class Equation : MonoBehaviour
 {
-
     //Assign TMP/Canvas 
     //[SerializeField]
     //private TMP_Text Number1Text;
@@ -17,7 +16,6 @@ public class Equation : MonoBehaviour
     //private TMP_Text Number2Text;
     //[SerializeField]
     //private TMP_Text OperationTypes;
-
     [SerializeField]
     private TMP_Text FeedbackText;
     [SerializeField]
@@ -47,7 +45,8 @@ public class Equation : MonoBehaviour
     private int Number2;
     private int Answer;
     private int UserAnswer;
-    private float score = 0;
+    public float Score { get; private set; } 
+    //private float score = 0;
     private float multi = 1;
 
 
@@ -213,15 +212,16 @@ public class Equation : MonoBehaviour
     }
     private void ScoreUp(int value, float multiplier = 1)
     {
-       score += value * multiplier;
+        Score += value * multiplier;
     }
     private void displayScore() // dirty local function should probs call from the ui script.
     {
-        scoreText.text = score.ToString("0000");
+        scoreText.text = Score.ToString("0000");
     }
 
     private void Start()
     {
+        Score = 0;
         EnterAnswer.onEndEdit.AddListener(var => {
             if (Keyboard.current.enterKey.wasPressedThisFrame || Keyboard.current.numpadEnterKey.wasPressedThisFrame)
                 Debug.Log("End edit on enter");
