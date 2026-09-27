@@ -33,6 +33,7 @@ EditorUserSettings:
       value: 50530c005d0450080b0d5d7a477a0a4444151c7a75797531787b4567e7e6316f
       flags: 0
     RecentlyUsedSceneGuid-7:
+<<<<<<< HEAD
       value: 00500d0353545e595e590977427b0f44464f497b2e7b7568792c4e30e4e5356e
       flags: 0
     RecentlyUsedSceneGuid-8:
@@ -40,6 +41,15 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedSceneGuid-9:
       value: 5a01570457075e09595d59721573594447164e29782d25332e7b4837e1b3316a
+=======
+      value: 020103535d0c08085d0a587b45725b44444e1a7a7d7023667e2f4b37e6b33268
+      flags: 0
+    RecentlyUsedSceneGuid-8:
+      value: 5a01015704535f0b5d0a587145225944444f4d2b7a70226829714432b7e2606e
+>>>>>>> origin/Background-Scene
+      flags: 0
+    lightmappingBakingProfile:
+      value: 51
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
