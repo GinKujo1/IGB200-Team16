@@ -145,6 +145,7 @@ public class Equation : MonoBehaviour
         if (UserAnswer == Answer)
         {
             FeedbackText.text = "CORRECT";
+            SoundManager.Instance.PlaySoundEffect(SFXType.SFX_CorrectAnswer);
             ScoreUp(100, 1);
             main.GetComponent<CameraBehavior>().MoveCameraUp();
             spawner.GetComponent<Spawner>().SpawnBuilding();
@@ -153,6 +154,7 @@ public class Equation : MonoBehaviour
         else
         {
             FeedbackText.text = $"INCORRECT, the answer was {Answer}.";
+            SoundManager.Instance.PlaySoundEffect(SFXType.SFX_WrongAnswer);
         }
     }
 
