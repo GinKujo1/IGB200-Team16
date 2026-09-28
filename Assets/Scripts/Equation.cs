@@ -1,5 +1,6 @@
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SocialPlatforms.Impl;
@@ -227,8 +228,8 @@ public class Equation : MonoBehaviour
         EnterAnswer.onEndEdit.AddListener(var => {
             if (Keyboard.current.enterKey.wasPressedThisFrame || Keyboard.current.numpadEnterKey.wasPressedThisFrame)
                 Debug.Log("End edit on enter");
-
         });
+
 
         GenerateEquation();
         main = Camera.main;

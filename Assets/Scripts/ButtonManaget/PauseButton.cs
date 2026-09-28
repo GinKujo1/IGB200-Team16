@@ -10,33 +10,26 @@ public class PauseButton : MonoBehaviour
     public static bool isPaused = false;
 
 
-
-    void Udate()
+    public void Pause()
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            if (isPaused) Resume();
-            else Pause();
-
+            EquationPanel.SetActive(false);
+            PausePanel.SetActive(true);
+            Time.timeScale = 0f;
+            isPaused = true;
         }
-    }
-
-    public void Pause()
-    {
-        EquationPanel.SetActive(false);
-        PausePanel.SetActive(true);
-        Time.timeScale = 0f;
-        isPaused = true;
     }
 
     public void Resume()
     {
-        PausePanel.SetActive(false);
-        EquationPanel.SetActive(true);
-        Time.timeScale = 1f;
-        isPaused = false;
-
-
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            EquationPanel.SetActive(true);
+            PausePanel.SetActive(false);
+            Time.timeScale = 10f;
+            isPaused = false;
+        }
     }
 
     public void LoadSceneByName()
@@ -48,6 +41,6 @@ public class PauseButton : MonoBehaviour
     {
         Application.Quit();
     }
-    
+
 
 }
