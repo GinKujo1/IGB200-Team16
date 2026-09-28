@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,7 @@ public class Spawner : MonoBehaviour
     public void SpawnBuilding()
     {
         Debug.Log("spawned Building");
+        SoundManager.Instance.PlaySoundEffect(SFXType.SFX_OnBuildingSpawned);
         Vector3 spawnPositon = spawnerObject.position;
         Quaternion spawnRotation = spawnerObject.rotation;
         Instantiate(CorrectBuilding, spawnPositon, spawnRotation);
