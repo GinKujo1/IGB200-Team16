@@ -58,7 +58,7 @@ public class SoundManager : MonoBehaviour
                 return audioReference.audioClip;
             }
         }
-        Debug.LogError("Sound not found");
+        Debug.LogWarning("Sound not found");
         return null;
     }
 
