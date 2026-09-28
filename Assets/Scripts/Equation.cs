@@ -156,6 +156,7 @@ public class Equation : MonoBehaviour
         if (UserAnswer == Answer)
         {
             FeedbackText.text = "CORRECT";
+            SoundManager.Instance.PlaySoundEffect(SFXType.SFX_CorrectAnswer);
 
             if(timerMulti.GetComponent<Timer_Multiplier>().timeRemaining > 0)
             {
@@ -172,6 +173,7 @@ public class Equation : MonoBehaviour
         else
         {
             FeedbackText.text = $"INCORRECT, the answer was {Answer}.";
+            SoundManager.Instance.PlaySoundEffect(SFXType.SFX_WrongAnswer);
             resetMulti();
             displayMulti();
             timerMulti.GetComponent<Timer_Multiplier>().nextQuestion();
