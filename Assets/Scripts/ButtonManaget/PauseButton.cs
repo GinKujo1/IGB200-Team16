@@ -1,22 +1,35 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+
 
 public class PauseButton : MonoBehaviour
 {
     public GameObject PausePanel;
     public GameObject EquationPanel;
+    public static bool isPaused = false;
+
 
     public void Pause()
     {
-        EquationPanel.SetActive(false);
-        PausePanel.SetActive(true);
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            EquationPanel.SetActive(false);
+            PausePanel.SetActive(true);
+            Time.timeScale = 0f;
+            isPaused = true;
+        }
     }
 
     public void Resume()
     {
-        PausePanel.SetActive(false);
-        EquationPanel.SetActive(true);
-
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            EquationPanel.SetActive(true);
+            PausePanel.SetActive(false);
+            Time.timeScale = 10f;
+            isPaused = false;
+        }
     }
 
     public void LoadSceneByName()
@@ -28,6 +41,6 @@ public class PauseButton : MonoBehaviour
     {
         Application.Quit();
     }
-    
+
 
 }
