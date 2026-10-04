@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 
 
@@ -29,6 +30,9 @@ public class Equation : MonoBehaviour
 
     [SerializeField]
     private TMP_Text multiText;
+    
+    [SerializeField]
+    private TMP_Text StreakText;
 
     private Camera main;
     [SerializeField] private GameObject spawner;
@@ -47,8 +51,10 @@ public class Equation : MonoBehaviour
     private int Answer;
     private int UserAnswer;
     public float Score { get; private set; } 
-    //private float score = 0;
     private float multi = 1;
+    private float streakCurrent = 1;
+    private float streakHighest = 0;
+    private int buildingIndex = 0;
 
 
     private int RandomNumber()
@@ -99,10 +105,6 @@ public class Equation : MonoBehaviour
             GenerateDivision();
                break;
         }
-        
-        //Number1Text.text = Number1.ToString();
-        //Number2Text.text = Number2.ToString();
-        //OperationTypes.text = GetOperationSymbol(operation);
 
         equationText.text = $"{Number1} {GetOperationSymbol(operation)} {Number2} =";
     }
@@ -161,13 +163,40 @@ public class Equation : MonoBehaviour
 
             if(timerMulti.GetComponent<Timer_Multiplier>().timeRemaining > 0)
             {
-                MultiUp(0.1f);
-                displayMulti();
+                StreakUp(1);
+                displayStreak();
             }
-            ScoreUp(100, multi);
+            switch(streakCurrent)
+            {
+                case 1:
+                    SetMulti(1.0f);
+                    buildingIndex = 0;
+                    break;
+                case 3:
+                    SetMulti(1.2f);
+                    buildingIndex = 0;
+                    break;
+                case 5:
+                    SetMulti(1.5f);
+                    buildingIndex = 1;
+                    break;
+                case 10:
+                    SetMulti(2.0f);
+                    buildingIndex = 2;
+                    break;
+                case 15:
+                    SetMulti(3.0f);
+                    buildingIndex = 3;
+                    break;
+
+            }
+            displayMulti();
+            
             main.GetComponent<CameraBehavior>().MoveCameraUp();
-            spawner.GetComponent<Spawner>().SpawnBuilding();
+            //spawner.GetComponent<Spawner>().SpawnBuilding();
+            spawner.GetComponent<Spawner>().SpawnBuildingFromlist(buildingIndex);
             timerMulti.GetComponent<Timer_Multiplier>().nextQuestion();
+            ScoreUp(100, multi);
             displayScore();
             NewEquation();
         }
@@ -176,6 +205,9 @@ public class Equation : MonoBehaviour
             FeedbackText.text = $"INCORRECT, the answer was {Answer}.";
             SoundManager.Instance.PlaySoundEffect(SFXType.SFX_WrongAnswer);
             resetMulti();
+            resetStreak();  ///reset streak
+            buildingIndex = 0;
+            displayStreak();
             displayMulti();
             timerMulti.GetComponent<Timer_Multiplier>().nextQuestion();
             NewEquation();
@@ -199,10 +231,22 @@ public class Equation : MonoBehaviour
         GenerateEquation();
     }
 
-
-    private void MultiUp(float value)
+    private void StreakUp(int value)
     {
-        multi += value; // added a cap later
+        streakCurrent += value;
+        if(streakHighest !<= streakCurrent)
+        {
+            streakHighest = streakCurrent;
+        }
+    }
+    private void resetStreak()
+    {
+        streakCurrent = 0;
+    }
+
+    private void SetMulti(float value)
+    {
+        multi = value;
     }
     private void resetMulti()
     {
@@ -212,6 +256,10 @@ public class Equation : MonoBehaviour
     private void displayMulti() // dirty local function should probs call from the ui script.
     {
         multiText.text = $"{multi:F1}x ";
+    }
+    private void displayStreak() // dirty local function should probs call from the ui script.
+    {
+        StreakText.text = $"{streakCurrent}";
     }
     private void ScoreUp(int value, float multiplier = 1)
     {
