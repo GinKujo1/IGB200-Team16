@@ -2,9 +2,11 @@ using NUnit.Framework.Internal.Commands;
 using System;
 using System.Collections;
 using Unity.VectorGraphics.Editor;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using static Unity.VisualScripting.Member;
 
 //List of Names of Audio Clips
 public enum SFXType
@@ -35,6 +37,9 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance = null;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioSource BGMSource;
+    [SerializeField] AudioSource BGMIntroSource;
+
+    AudioSource sourceRef;
     [SerializeField] private AudioReference[] SFXList;
 
     private void Awake() {
@@ -43,11 +48,12 @@ public class SoundManager : MonoBehaviour
         } else {
             Instance = this;
         }
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
-        PlayLoop(SFXType.LOOP_MainGameBGMInrto, SFXType.LOOP_MainGameBGM);
+        //PlayLoop(SFXType.LOOP_MainGameBGMInrto, SFXType.LOOP_MainGameBGM);
     }
     public AudioClip GetAudioFromSoundList(SFXType type) {
         foreach (var audioReference in SFXList)
@@ -86,16 +92,27 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    private void PlayLoop(SFXType intro, SFXType mainLoop) {
-        AudioClip clip = Instance.GetAudioFromSoundList(intro);
-        if (clip != null)
-        {
-            StartCoroutine(WaitForIntroToEndAndPlayLoop(clip.length, mainLoop));
-            Instance.BGMSource.PlayOneShot(clip);
-        }
+    public void PlayLoop(SFXType intro, SFXType mainLoop, float volume) {
+        double dspNow = AudioSettings.dspTime;
+        double startIntroAt = dspNow;
+        BGMIntroSource.volume = volume;
+        BGMSource.volume = volume;
 
+        AudioClip introClip = GetAudioFromSoundList(intro);
+        AudioClip mainLoopClip = GetAudioFromSoundList(mainLoop);
+
+        // Intro starts scheduled
+        BGMIntroSource.clip = introClip;
+        BGMIntroSource.PlayScheduled(startIntroAt);
+
+        // Loop starts exactly when intro ends
+        double loopStartAt = startIntroAt + introClip.length;
+
+        BGMSource.loop = true;
+        BGMSource.clip = mainLoopClip;
+        BGMSource.PlayScheduled(loopStartAt);
     }
-    private void PlayLoop(SFXType Loop) {
+    public void PlayLoop(SFXType Loop) {
         AudioClip clip = Instance.GetAudioFromSoundList(Loop);
         if (clip != null)
         {
@@ -105,9 +122,41 @@ public class SoundManager : MonoBehaviour
             Instance.BGMSource.Play();
         } 
     }
-    private IEnumerator WaitForIntroToEndAndPlayLoop(float introLength, SFXType mainLoop) {
 
-        yield return new WaitForSeconds(introLength - 0.1f);
-        PlayLoop(mainLoop);
+    public IEnumerator FadeOutIntro(float FadeTime) {
+        float startVolume = BGMIntroSource.volume;
+        if (!BGMIntroSource.isPlaying)
+            yield break;
+     
+        while (BGMIntroSource.volume > 0)
+        {
+            BGMIntroSource.volume -= startVolume * Time.deltaTime / FadeTime;
+
+            yield return null;
+        }
+
+        BGMIntroSource.Stop();
+        BGMIntroSource.volume = startVolume;
+    }
+    public IEnumerator FadeOutMusic(float FadeTime) {
+        if (BGMIntroSource.isPlaying) {
+            sourceRef = BGMIntroSource;
+        } else if(BGMSource.isPlaying) {
+            sourceRef = BGMSource;
+        }
+
+        float startVolume = sourceRef.volume;
+        float t = 0f;
+        while (sourceRef.volume > 0)
+        {
+            t += Time.deltaTime;
+            //sourceRef.volume = Mathf.Lerp(startVolume, 0f, t / FadeTime);
+            sourceRef.volume -= startVolume * Time.deltaTime / FadeTime;
+            Debug.Log("Fading out music");
+            yield return null;
+        }
+
+        sourceRef.Stop();
+        sourceRef.volume = startVolume;
     }
 }
