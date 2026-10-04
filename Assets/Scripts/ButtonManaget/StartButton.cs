@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,16 @@ public class StartButton : MonoBehaviour
     public void LoadSceneByIndex(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
+    }
+    public void StartGame() {
+        SoundManager.Instance.PlaySoundEffect(SFXType.SFX_StartButtonClick);
+        StartCoroutine(LoadingToMainGame(3f));
+
+    }
+    public IEnumerator LoadingToMainGame(float transitionTime) {
+        StartCoroutine(SoundManager.Instance.FadeOutMusic(2f));
+        yield return new WaitForSeconds(transitionTime);
+        LoadSceneByIndex(1);
     }
 
     public void QuitGame()

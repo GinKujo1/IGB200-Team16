@@ -8,7 +8,9 @@ public class ResultButton : MonoBehaviour
 
     public void LoadSceneByName()
     {
-        SceneManager.LoadScene("HomeScreen");
+        //SceneManager.LoadScene("HomeScreen");
+        SceneManager.LoadScene(0);
+    
     }
     public void Restart()
     {
