@@ -108,7 +108,33 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28b064c7ab412d14a8d2e083a4482d2b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4324537464721541189}
+    - targetCorrespondingSourceObject: {fileID: -8402871509367941651, guid: 28b064c7ab412d14a8d2e083a4482d2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6607331191184561583}
   m_SourcePrefab: {fileID: 100100000, guid: 28b064c7ab412d14a8d2e083a4482d2b, type: 3}
+--- !u!1 &6586888657591929728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8402871509367941651, guid: 28b064c7ab412d14a8d2e083a4482d2b, type: 3}
+  m_PrefabInstance: {fileID: 5767515405879778925}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6607331191184561583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6586888657591929728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63417b57d81b90247939ab9e52f2ef2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaterialRandomiser
+  mats:
+  - {fileID: 2100000, guid: 42f23b205ed260142a87f49628b37992, type: 2}
+  - {fileID: 2100000, guid: cdfbf451e95f39a4c9f001d58a6abded, type: 2}
+  - {fileID: 2100000, guid: 235e275e21de1c8419642f5d2ab6ffe7, type: 2}
+  - {fileID: 2100000, guid: 4f17212b4495f1b429f4df3406a83fbe, type: 2}
+  - {fileID: 2100000, guid: 2608fb3404a741d4b8dad99cace3fd85, type: 2}
 --- !u!1 &6686505579386741564 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 28b064c7ab412d14a8d2e083a4482d2b, type: 3}

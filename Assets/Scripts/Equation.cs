@@ -54,6 +54,9 @@ public class Equation : MonoBehaviour
     private float multi = 1;
     private float streakCurrent = 1;
     private float streakHighest = 0;
+
+    private float numberCorrect = 0;
+    private float totalQuestions = 0;
     private int buildingIndex = 0;
 
 
@@ -158,7 +161,9 @@ public class Equation : MonoBehaviour
 
         if (UserAnswer == Answer)
         {
+            totalQuestions++;
             FeedbackText.text = "CORRECT";
+            numberCorrect++;
             SoundManager.Instance.PlaySoundEffect(SFXType.SFX_CorrectAnswer);
 
             if(timerMulti.GetComponent<Timer_Multiplier>().timeRemaining > 0)
@@ -202,6 +207,7 @@ public class Equation : MonoBehaviour
         }
         else
         {
+            totalQuestions++;
             FeedbackText.text = $"INCORRECT, the answer was {Answer}.";
             SoundManager.Instance.PlaySoundEffect(SFXType.SFX_WrongAnswer);
             resetMulti();
@@ -273,6 +279,8 @@ public class Equation : MonoBehaviour
     private void Start()
     {
         Score = 0;
+        numberCorrect = 0;
+        totalQuestions = 0;
         EnterAnswer.onEndEdit.AddListener(var => {
             if (Keyboard.current.enterKey.wasPressedThisFrame || Keyboard.current.numpadEnterKey.wasPressedThisFrame)
                 Debug.Log("End edit on enter");
