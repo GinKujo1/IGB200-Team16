@@ -4,6 +4,7 @@ public class Timer : MonoBehaviour
 {
     public GameObject ResultsMenu;
     public GameObject EquationPanel;
+    public GameObject mathManager;
 
     //private float timeRemaining = 60f;
     [SerializeField] private TextMeshProUGUI timerText;
@@ -16,6 +17,7 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
+        
         isTimerRunning = true;  // this starts the timer when the scene starts can be modified later
         timerConverted = timerTime * 60;
     }
@@ -34,12 +36,13 @@ public class Timer : MonoBehaviour
             {
                 EquationPanel.SetActive(false);
                 ResultsMenu.SetActive(true);
+                mathManager.GetComponent<Equation>().ShowFinaleResults();
                 timerConverted = 0;
                 isTimerRunning = false;
                 DisplayTime(timerConverted);
 
-                //OnGameOver(EquationPanel.GetComponent<Equation>().Score); // getting score and added it to scoreboard.
-                OnGameOver(100);
+                //OnGameOver(mathManager.GetComponent<Equation>().Score); // getting score and added it to scoreboard.
+                //OnGameOver(100);
             }
         }
     }

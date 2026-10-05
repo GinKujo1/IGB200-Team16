@@ -1,40 +1,22 @@
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
+
 
 
 
 public class Equation : MonoBehaviour
 {
-    //Assign TMP/Canvas 
-    //[SerializeField]
-    //private TMP_Text Number1Text;
-    //[SerializeField]
-    //private TMP_Text Number2Text;
-    //[SerializeField]
-    //private TMP_Text OperationTypes;
-    [SerializeField]
-    private TMP_Text FeedbackText;
-    [SerializeField]
-    private TMP_InputField EnterAnswer;
+    [Header("Gameplay Variables")]
+    [SerializeField] private TMP_Text FeedbackText;
+    [SerializeField] private TMP_InputField EnterAnswer;
     public TMP_Text scoreText;
-    public TMP_Text finalScoreText;
+    [SerializeField] private TMP_Text equationText;
+    [SerializeField] private TMP_Text multiText;
+    [SerializeField] private TMP_Text StreakText;
 
-    [SerializeField]
-    private TMP_Text equationText;
-
-    [SerializeField]
-    private TMP_Text multiText;
-    
-    [SerializeField]
-    private TMP_Text StreakText;
-
-    private Camera main;
+    [Header("Gameplay Variables")]
     [SerializeField] private GameObject spawner;
     [SerializeField] private GameObject timerMulti;
     public int _minValue = 0;
@@ -44,20 +26,30 @@ public class Equation : MonoBehaviour
     public Operations operation = Operations.Add;
 
     public bool RandomOperations = false;
-
-
+    // private vars
+    public float Score { get; private set; }
+    private Camera main;
     private int Number1;
     private int Number2;
     private int Answer;
     private int UserAnswer;
-    public float Score { get; private set; } 
+   
+    //////////////////////////////////////////////////
     private float multi = 1;
     private float streakCurrent = 1;
     private float streakHighest = 0;
-
-    private float numberCorrect = 0;
+    private float questionsCorrect = 0;
     private float totalQuestions = 0;
     private int buildingIndex = 0;
+    private string incorrectQuestions = "";
+
+    [Header("WinCard Text Variables")]
+    public TMP_Text finalScoreText;
+    public TMP_Text finalQuestionsText;
+    public TMP_Text finalCorrectText;
+    public TMP_Text finalAccuracyText;
+    public TMP_Text finalBestStreakText;
+    public TMP_Text finalIncorrectQuestionsText;
 
 
     private int RandomNumber()
@@ -163,7 +155,7 @@ public class Equation : MonoBehaviour
         {
             totalQuestions++;
             FeedbackText.text = "CORRECT";
-            numberCorrect++;
+            questionsCorrect++;
             SoundManager.Instance.PlaySoundEffect(SFXType.SFX_CorrectAnswer);
 
             if(timerMulti.GetComponent<Timer_Multiplier>().timeRemaining > 0)
@@ -279,7 +271,7 @@ public class Equation : MonoBehaviour
     private void Start()
     {
         Score = 0;
-        numberCorrect = 0;
+        questionsCorrect = 0;
         totalQuestions = 0;
         EnterAnswer.onEndEdit.AddListener(var => {
             if (Keyboard.current.enterKey.wasPressedThisFrame || Keyboard.current.numpadEnterKey.wasPressedThisFrame)
@@ -291,6 +283,35 @@ public class Equation : MonoBehaviour
         main = Camera.main;
         displayScore();
         displayMulti();
-    } 
- 
+    }
+
+    public void ShowFinaleResults()
+    {
+        finalScoreText.text = "FINAL SCORE: " + Score;
+
+        finalQuestionsText.text = "QUESTIONS ANSWERED: " + totalQuestions;
+
+        finalCorrectText.text = "CORRECT ANSWERS: " + questionsCorrect + " / " + totalQuestions;
+
+        float accuracy = 0f;
+
+        if (totalQuestions > 0)
+            accuracy = ((float)questionsCorrect / totalQuestions) * 100f;
+
+        finalAccuracyText.text = "ACCURACY: " + Mathf.RoundToInt(accuracy) + "%";
+
+        finalBestStreakText.text = "BEST STREAK: " + streakHighest;
+
+        //finalIncorrectQuestionsText
+
+        if (incorrectQuestions == "")
+        {
+        finalIncorrectQuestionsText.text = "INCORRECT QUESTIONS\n\nNo incorrect answers!";
+        }
+        else
+        {
+            finalIncorrectQuestionsText.text = "INCORRECT QUESTIONS\n\n" + incorrectQuestions;
+        }
+    }
+
 }
