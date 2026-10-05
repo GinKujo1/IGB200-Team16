@@ -87,7 +87,7 @@ PrefabInstance:
     - target: {fileID: 4162022342550583982, guid: 2a7d87f7a55f37a42a17a5ed9d0d803d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 3595f4bf9b73b4341aeb635d8294ac3f, type: 2}
+      objectReference: {fileID: 2100000, guid: 1f0823ce2c1447e47ac90a58287dc9c9, type: 2}
     - target: {fileID: 7247218627780913708, guid: 2a7d87f7a55f37a42a17a5ed9d0d803d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -174,7 +174,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184953938923456061}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d220cae32361a81489f5d16d71cd518f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

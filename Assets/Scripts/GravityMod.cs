@@ -11,7 +11,11 @@ public class GravityMod : MonoBehaviour
         //turns the rigidbody component gravity off 
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
-        
+        // these are here to attempt to fix the phasing issue.
+        rb.solverIterations = 24;
+        rb.solverVelocityIterations = 8;
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
+        rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
     }
 
     // Update is called once per frame

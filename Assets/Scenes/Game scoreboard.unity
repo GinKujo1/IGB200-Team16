@@ -93,8 +93,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: da34ab52c29363b438a6ea2f13bdbbaf, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 79b22d3a3ba86c4409ecd1c809d17df8, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3386550603913502004, guid: 0158a70779d5a32499e63f2fc41d4326, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1809
+      value: -2192
       objectReference: {fileID: 0}
     - target: {fileID: 3386550603913502004, guid: 0158a70779d5a32499e63f2fc41d4326, type: 3}
       propertyPath: m_LocalPosition.y
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   CorrectBuilding: {fileID: 4883806153789170051, guid: e65e4590b3bbacc40a30d288de717fc1, type: 3}
   spawnerObject: {fileID: 46128215}
-  moveUp: 130
+  moveUp: 139
   BuildingsToSpawn:
   - {fileID: 5298603657155466708, guid: 924d48d3289c4cc4bacf2bb84f20f996, type: 3}
   - {fileID: 6686505579386741564, guid: 9b91a1fab40bedb4bb78da465c2da51e, type: 3}
@@ -447,7 +447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ed0de4b1490d42429e08511788ff5fc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1326
+      value: -1709
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0ed0de4b1490d42429e08511788ff5fc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -808,7 +808,7 @@ MonoBehaviour:
   zOffset: 0
   dampTime: 0.3
   stopThreshold: 0.01
-  cameraMoveAmount: 139
+  cameraMoveAmount: 139.5
 --- !u!82 &330585549
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1209,7 +1209,7 @@ Light:
   serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1271,8 +1271,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.22729325, y: -0.016845562, z: 0.0039324434, w: 0.97367275}
+  m_LocalPosition: {x: 4.3736134, y: 51.162613, z: -133.09077}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3079,7 +3079,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ec93e66e1f34876498e6d8bd5c2a3ff6, type: 2}
     - target: {fileID: 4810894845485125486, guid: 924d48d3289c4cc4bacf2bb84f20f996, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1093
+      value: -1476
       objectReference: {fileID: 0}
     - target: {fileID: 4810894845485125486, guid: 924d48d3289c4cc4bacf2bb84f20f996, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3242,7 +3242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5227856178071485241, guid: e65e4590b3bbacc40a30d288de717fc1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1570
+      value: -1953
       objectReference: {fileID: 0}
     - target: {fileID: 5227856178071485241, guid: e65e4590b3bbacc40a30d288de717fc1, type: 3}
       propertyPath: m_LocalPosition.y
