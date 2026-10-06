@@ -15,9 +15,9 @@ public class CameraBehavior : MonoBehaviour
 
 
     [Header("Movement Amount")]
-    [SerializeField] private float cameraMoveAmount = 100f; 
+    [SerializeField] private float cameraMoveAmount = 100f;
 
-    
+    public GameObject spawner;
     private bool isMoving = true;
 
     private Vector3 velocity = Vector3.zero;
@@ -60,7 +60,9 @@ public class CameraBehavior : MonoBehaviour
     public void MoveCameraUp()
     {
         currentPos = this.transform.position;
-        targetPos = currentPos + new Vector3(0, cameraMoveAmount, 0);
+        
+        currentPos.y = spawner.transform.position.y;
+        targetPos = currentPos;
         isMoving = true;
     }
 

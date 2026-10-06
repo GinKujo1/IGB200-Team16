@@ -1130,7 +1130,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9358,6 +9358,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1645805351524019591, guid: b3da9b6f2537cea4484d47df4f9a0543, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 558af1767b91d854388e063953c65b8f, type: 2}
+    - target: {fileID: 4810961024083324644, guid: b3da9b6f2537cea4484d47df4f9a0543, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 558af1767b91d854388e063953c65b8f, type: 2}
     - target: {fileID: 6268139727070253567, guid: b3da9b6f2537cea4484d47df4f9a0543, type: 3}
       propertyPath: m_LocalPosition.x
       value: -424.8707
