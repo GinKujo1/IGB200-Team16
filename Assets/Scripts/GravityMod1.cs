@@ -20,6 +20,5 @@ public class GravityMod1 : MonoBehaviour
             //rb = GetComponent<Rigidbody>();
          //   rb.isKinematic = true;
         }
-
     }
 }

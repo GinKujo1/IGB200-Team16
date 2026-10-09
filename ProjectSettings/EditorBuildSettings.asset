@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Playtest 2/Game V2 - UI Design.unity
-    guid: ca9e6a7b37e528040811b3384e3cfea6
+    path: Assets/Scenes/HIGH FIDELITY/0. Final Homescreen.unity
+    guid: 90cb22724350e0f41a6c4eccc25dc3e2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
