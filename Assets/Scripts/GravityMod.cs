@@ -45,7 +45,8 @@ public class GravityMod : MonoBehaviour
         void IsRested()
         {
             IsSettle = true;
-            rb.isKinematic = true;
             rb.linearVelocity = Vector3.zero;
+            rb.isKinematic = true;
+            
         }
 }
