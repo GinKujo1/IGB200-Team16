@@ -10,7 +10,7 @@ public class Equation : MonoBehaviour
 {
     [Header("Gameplay Variables")]
     [SerializeField] private TMP_Text FeedbackText;
-    [SerializeField] private TMP_InputField EnterAnswer;
+    [SerializeField] public TMP_InputField EnterAnswer;
     public TMP_Text scoreText;
     [SerializeField] private TMP_Text equationText;
     [SerializeField] private TMP_Text multiText;
@@ -218,10 +218,13 @@ public class Equation : MonoBehaviour
             //{
             //    //NewEquation();
             //}
+
         displayMulti();
         EnterAnswer.Select();
         EnterAnswer.ActivateInputField();
         }
+
+        
     public void NewEquation()
     {
         EnterAnswer.text = null;

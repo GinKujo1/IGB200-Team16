@@ -56,6 +56,7 @@
     <Compile Include="Assets\Scripts\Leaderboard\ScoreBoardManager.cs" />
     <Compile Include="Assets\TutorialInfo\Readme.cs" />
     <Compile Include="Assets\Scripts\ButtonManaget\ResultButton.cs" />
+    <Compile Include="Assets\Scripts\GravityMod1.cs" />
     <Compile Include="Assets\Scripts\Timer_Multiplier.cs" />
     <Compile Include="Assets\Scripts\Leaderboard\ScoreBoardEntry.cs" />
     <Compile Include="Assets\Scripts\ButtonManaget\GameManager.cs" />
