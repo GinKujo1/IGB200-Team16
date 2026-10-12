@@ -49,7 +49,9 @@ public class Equation : MonoBehaviour
     public TMP_Text finalCorrectText;
     public TMP_Text finalAccuracyText;
     public TMP_Text finalBestStreakText;
-    public TMP_Text finalIncorrectQuestionsText;
+
+    [Header("NOT IMPLEMENTED")]
+    public TMP_Text finalIncorrectQuestionsText; 
 
 
     private int RandomNumber()
@@ -235,6 +237,7 @@ public class Equation : MonoBehaviour
     private void StreakUp(int value)
     {
         streakCurrent += value;
+        Debug.Log($"{streakCurrent}");
         if(streakHighest !<= streakCurrent)
         {
             streakHighest = streakCurrent;
@@ -256,7 +259,7 @@ public class Equation : MonoBehaviour
 
     private void displayMulti() // dirty local function should probs call from the ui script.
     {
-        multiText.text = $"{multi:F1}x ";
+        multiText.text = $"x{multi:F1}";
     }
     private void displayStreak() // dirty local function should probs call from the ui script.
     {
@@ -276,6 +279,7 @@ public class Equation : MonoBehaviour
         Score = 0;
         questionsCorrect = 0;
         totalQuestions = 0;
+        streakCurrent = 0;
         EnterAnswer.onEndEdit.AddListener(var => {
             if (Keyboard.current.enterKey.wasPressedThisFrame || Keyboard.current.numpadEnterKey.wasPressedThisFrame)
                 Debug.Log("End edit on enter");

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject CorrectBuilding;
+    //public GameObject CorrectBuilding;
     public Transform spawnerObject;
     public float moveUp = 10.0f;
     public GameObject[] BuildingsToSpawn = new GameObject[4];
@@ -22,15 +22,15 @@ public class Spawner : MonoBehaviour
         //}
     }
 
-    public void SpawnBuilding()
-    {
-        Debug.Log("spawned Building");
-        SoundManager.Instance.PlaySoundEffect(SFXType.SFX_OnBuildingSpawned);
-        Vector3 spawnPositon = spawnerObject.position;
-        Quaternion spawnRotation = spawnerObject.rotation;
-        Instantiate(CorrectBuilding, spawnPositon, spawnRotation);
-        transform.position += new Vector3 (0,moveUp,0);
-    }
+    //public void SpawnBuilding()
+    //{
+    //    Debug.Log("spawned Building");
+    //    SoundManager.Instance.PlaySoundEffect(SFXType.SFX_OnBuildingSpawned);
+    //    Vector3 spawnPositon = spawnerObject.position;
+    //    Quaternion spawnRotation = spawnerObject.rotation;
+    //    Instantiate(CorrectBuilding, spawnPositon, spawnRotation);
+    //    transform.position += new Vector3 (0,moveUp,0);
+    //}
     /// <summary>
     /// Spawns a building from array. WARNING index cannot exceed the number 3. as you will get an index out of bounds exception error.
     /// </summary>
