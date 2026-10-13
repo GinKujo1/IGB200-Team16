@@ -15,11 +15,12 @@ public class StartButton : MonoBehaviour
     }
     public void StartGame() {
         SoundManager.Instance.PlaySoundEffect(SFXType.SFX_StartButtonClick);
-        StartCoroutine(LoadingToMainGame(3f));
 
+        StartCoroutine(LoadingToMainGame(1f));
     }
+
     public IEnumerator LoadingToMainGame(float transitionTime) {
-        StartCoroutine(SoundManager.Instance.FadeOutMusic(2f));
+        StartCoroutine(SoundManager.Instance.FadeOutMusic(transitionTime));
         yield return new WaitForSeconds(transitionTime);
         LoadSceneByIndex(1);
     }

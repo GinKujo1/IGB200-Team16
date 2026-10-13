@@ -163,9 +163,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b26494aaea6c7f4696f950b1e149bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
-  CorrectBuilding: {fileID: 4883806153789170051, guid: e65e4590b3bbacc40a30d288de717fc1, type: 3}
   spawnerObject: {fileID: 46128215}
   moveUp: 130
+  BuildingsToSpawn:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  BuildingsToSpawnRed:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  BuildingsToSpawnBlue:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &146286578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -537,6 +551,7 @@ MonoBehaviour:
   dampTime: 0.3
   stopThreshold: 0.01
   cameraMoveAmount: 139
+  spawner: {fileID: 0}
 --- !u!82 &330585549
 AudioSource:
   m_ObjectHideFlags: 0
@@ -713,15 +728,21 @@ MonoBehaviour:
   FeedbackText: {fileID: 3019542197363893922}
   EnterAnswer: {fileID: 1950263043892802660}
   scoreText: {fileID: 1971671306}
-  finalScoreText: {fileID: 0}
   equationText: {fileID: 1390693268}
   multiText: {fileID: 1911855399}
+  StreakText: {fileID: 0}
   spawner: {fileID: 46128214}
   timerMulti: {fileID: 1576578963}
   _minValue: 0
   _maxValue: 100
   operation: 0
   RandomOperations: 0
+  finalScoreText: {fileID: 0}
+  finalQuestionsText: {fileID: 0}
+  finalCorrectText: {fileID: 0}
+  finalAccuracyText: {fileID: 0}
+  finalBestStreakText: {fileID: 0}
+  finalIncorrectQuestionsText: {fileID: 0}
 --- !u!1 &349435633
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,6 +1366,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1004488807
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3301401351455820177, guid: 151b6a31c5f151c4fbdd40058b65ba26, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1234.7552
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301401351455820177, guid: 151b6a31c5f151c4fbdd40058b65ba26, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -251.00003
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301401351455820177, guid: 151b6a31c5f151c4fbdd40058b65ba26, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1005.8045
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301401351455820177, guid: 151b6a31c5f151c4fbdd40058b65ba26, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301401351455820177, guid: 151b6a31c5f151c4fbdd40058b65ba26, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301401351455820177, guid: 151b6a31c5f151c4fbdd40058b65ba26, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301401351455820177, guid: 151b6a31c5f151c4fbdd40058b65ba26, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301401351455820177, guid: 151b6a31c5f151c4fbdd40058b65ba26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301401351455820177, guid: 151b6a31c5f151c4fbdd40058b65ba26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301401351455820177, guid: 151b6a31c5f151c4fbdd40058b65ba26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5599697824208725597, guid: 151b6a31c5f151c4fbdd40058b65ba26, type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 151b6a31c5f151c4fbdd40058b65ba26, type: 3}
 --- !u!1 &1094186177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2824,3 +2902,4 @@ SceneRoots:
   - {fileID: 1107762573}
   - {fileID: 378731068}
   - {fileID: 970097511}
+  - {fileID: 1004488807}

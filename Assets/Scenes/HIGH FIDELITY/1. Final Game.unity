@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TexturedBuilding2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2716974014036068238, guid: 0158a70779d5a32499e63f2fc41d4326, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3386550603913502004, guid: 0158a70779d5a32499e63f2fc41d4326, type: 3}
       propertyPath: m_LocalScale.x
       value: 35
@@ -507,6 +511,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0ed0de4b1490d42429e08511788ff5fc, type: 3}
       propertyPath: m_Name
       value: BaseBuilding
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0ed0de4b1490d42429e08511788ff5fc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1003433016189578991, guid: 0ed0de4b1490d42429e08511788ff5fc, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2126,6 +2134,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: ec93e66e1f34876498e6d8bd5c2a3ff6, type: 2}
+    - target: {fileID: 1636745443445644470, guid: 924d48d3289c4cc4bacf2bb84f20f996, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4810894845485125486, guid: 924d48d3289c4cc4bacf2bb84f20f996, type: 3}
       propertyPath: m_LocalPosition.x
       value: -74.30005
@@ -2173,6 +2185,10 @@ PrefabInstance:
     - target: {fileID: 5298603657155466708, guid: 924d48d3289c4cc4bacf2bb84f20f996, type: 3}
       propertyPath: m_Name
       value: Measuring Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298603657155466708, guid: 924d48d3289c4cc4bacf2bb84f20f996, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2305,6 +2321,10 @@ PrefabInstance:
     - target: {fileID: 4883806153789170051, guid: e65e4590b3bbacc40a30d288de717fc1, type: 3}
       propertyPath: m_Name
       value: TexturedBuilding1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4883806153789170051, guid: e65e4590b3bbacc40a30d288de717fc1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5227856178071485241, guid: e65e4590b3bbacc40a30d288de717fc1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2460,7 +2480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1773026603
 Transform:
   m_ObjectHideFlags: 0
@@ -2526,7 +2546,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1818041132
 Transform:
   m_ObjectHideFlags: 0
@@ -10596,7 +10616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &2639776584826625154
 GameObject:
   m_ObjectHideFlags: 0
@@ -10695,6 +10715,10 @@ PrefabInstance:
     - target: {fileID: 6752927136282643269, guid: b3da9b6f2537cea4484d47df4f9a0543, type: 3}
       propertyPath: m_Name
       value: Level 4 Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752927136282643269, guid: b3da9b6f2537cea4484d47df4f9a0543, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13348,6 +13372,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 1 Building
       objectReference: {fileID: 0}
+    - target: {fileID: 5298603657155466708, guid: 924d48d3289c4cc4bacf2bb84f20f996, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13919,6 +13947,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level 3 Building
       objectReference: {fileID: 0}
+    - target: {fileID: 1184953938923456061, guid: 4dbcb5928de531342a29f67e8f0d6729, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1961913542253468807, guid: 4dbcb5928de531342a29f67e8f0d6729, type: 3}
       propertyPath: m_LocalPosition.x
       value: -249.99991
@@ -14100,7 +14132,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -745, y: -548.2}
+  m_AnchoredPosition: {x: -42, y: -548.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5750274768800898364
@@ -14532,7 +14564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &6121608774109055059
 GameObject:
   m_ObjectHideFlags: 0
@@ -15151,8 +15183,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -455, y: 135}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -352.47394, y: 135}
+  m_SizeDelta: {x: 138.7671, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &6555937952305176578
 RectTransform:
@@ -16296,6 +16328,10 @@ PrefabInstance:
     - target: {fileID: 6686505579386741564, guid: 9b91a1fab40bedb4bb78da465c2da51e, type: 3}
       propertyPath: m_Name
       value: Level 2 Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 6686505579386741564, guid: 9b91a1fab40bedb4bb78da465c2da51e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
