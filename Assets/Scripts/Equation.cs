@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SocialPlatforms.Impl;
 
 
 
@@ -41,7 +40,7 @@ public class Equation : MonoBehaviour
     private float questionsCorrect = 0;
     private float totalQuestions = 0;
     private int buildingIndex = 0;
-    private string incorrectQuestions = "";
+    //private string incorrectQuestions = "";
 
     [Header("WinCard Text Variables")]
     public TMP_Text finalScoreText;
@@ -50,8 +49,8 @@ public class Equation : MonoBehaviour
     public TMP_Text finalAccuracyText;
     public TMP_Text finalBestStreakText;
 
-    [Header("NOT IMPLEMENTED")]
-    public TMP_Text finalIncorrectQuestionsText; 
+    //[Header("NOT IMPLEMENTED")]
+    //public TMP_Text finalIncorrectQuestionsText; 
 
 
     private int RandomNumber()
@@ -311,14 +310,14 @@ public class Equation : MonoBehaviour
 
         //finalIncorrectQuestionsText
 
-        if (incorrectQuestions == "")
-        {
-        finalIncorrectQuestionsText.text = "INCORRECT QUESTIONS\n\nNo incorrect answers!";
-        }
-        else
-        {
-            finalIncorrectQuestionsText.text = "INCORRECT QUESTIONS\n\n" + incorrectQuestions;
-        }
+       //if (incorrectQuestions == "")
+       //{
+       //finalIncorrectQuestionsText.text = "INCORRECT QUESTIONS\n\nNo incorrect answers!";
+       //}
+       //else
+       //{
+       //    finalIncorrectQuestionsText.text = "INCORRECT QUESTIONS\n\n" + incorrectQuestions;
+       //}
     }
 
 }

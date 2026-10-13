@@ -1,8 +1,4 @@
-using NUnit.Framework.Internal.Commands;
-using System;
 using System.Collections;
-using Unity.VectorGraphics.Editor;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

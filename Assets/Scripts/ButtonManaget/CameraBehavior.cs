@@ -1,6 +1,3 @@
-
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -14,8 +11,8 @@ public class CameraBehavior : MonoBehaviour
     [SerializeField] private float stopThreshold = 0.1f;
 
 
-    [Header("Movement Amount")]
-    [SerializeField] private float cameraMoveAmount = 100f;
+    //[Header("Movement Amount")]
+    //[SerializeField] private float cameraMoveAmount = 100f;
 
     public GameObject spawner;
     private bool isMoving = true;
