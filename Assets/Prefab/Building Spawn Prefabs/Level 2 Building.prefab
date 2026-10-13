@@ -1,5 +1,107 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &748464928467366161
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6305300926981994886}
+    m_Modifications:
+    - target: {fileID: 4159402110167095981, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+      propertyPath: m_Name
+      value: CollisionVFXHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179355187424017397, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179355187424017397, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179355187424017397, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179355187424017397, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179355187424017397, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179355187424017397, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179355187424017397, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179355187424017397, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179355187424017397, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179355187424017397, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+--- !u!198 &373037365951613685 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1102923829125905380, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+  m_PrefabInstance: {fileID: 748464928467366161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &751378583226633155 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4075014054607570, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+  m_PrefabInstance: {fileID: 748464928467366161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1177201090164949388 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1888511020786167965, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+  m_PrefabInstance: {fileID: 748464928467366161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2784693833207195146 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3226315294342092571, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+  m_PrefabInstance: {fileID: 748464928467366161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4426324870575104283 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3967218168488366090, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+  m_PrefabInstance: {fileID: 748464928467366161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5168387270887820049 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5610034011793127936, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+  m_PrefabInstance: {fileID: 748464928467366161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7123272625647360722 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7546315904823012291, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+  m_PrefabInstance: {fileID: 748464928467366161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7620413148447017700 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7179355187424017397, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+  m_PrefabInstance: {fileID: 748464928467366161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7777184946509148334 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7029283818533274047, guid: 9ca6aca70ea38c046a0c9b18525f9cb1, type: 3}
+  m_PrefabInstance: {fileID: 748464928467366161}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5767515405879778925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94,7 +196,10 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 1f0823ce2c1447e47ac90a58287dc9c9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 28b064c7ab412d14a8d2e083a4482d2b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7620413148447017700}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28b064c7ab412d14a8d2e083a4482d2b, type: 3}
       insertIndex: -1
@@ -112,6 +217,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6607331191184561583}
   m_SourcePrefab: {fileID: 100100000, guid: 28b064c7ab412d14a8d2e083a4482d2b, type: 3}
+--- !u!4 &6305300926981994886 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 28b064c7ab412d14a8d2e083a4482d2b, type: 3}
+  m_PrefabInstance: {fileID: 5767515405879778925}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6586888657591929728 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8402871509367941651, guid: 28b064c7ab412d14a8d2e083a4482d2b, type: 3}
@@ -166,6 +276,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaySoundOnCollision
   sfx: 1
+  effects:
+  - {fileID: 2784693833207195146}
+  - {fileID: 4426324870575104283}
+  - {fileID: 1177201090164949388}
+  - {fileID: 7123272625647360722}
+  - {fileID: 5168387270887820049}
+  - {fileID: 7777184946509148334}
+  - {fileID: 751378583226633155}
+  - {fileID: 373037365951613685}
 --- !u!54 &8828707509213183585
 Rigidbody:
   m_ObjectHideFlags: 0

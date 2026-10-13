@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ButtonManaget\StartButton.cs" />
-    <Compile Include="Assets\Scripts\PlaySoundOnCollision.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\Leaderboard\ScoreBoardUI.cs" />
     <Compile Include="Assets\Scripts\Leaderboard\ScoreBoardManager.cs" />
@@ -77,6 +76,7 @@
     <Compile Include="Assets\Scripts\SceneMusicManager.cs" />
     <Compile Include="Assets\Scripts\ButtonManaget\PauseButton.cs" />
     <Compile Include="Assets\Scripts\Equation.cs" />
+    <Compile Include="Assets\Scripts\BuildingCollisionEffects.cs" />
     <Compile Include="Assets\Scripts\MaterialRandomiser.cs" />
     <Compile Include="Assets\Scripts\GravityMod.cs" />
     <Compile Include="Assets\Scripts\ButtonManaget\SoundManager.cs" />
