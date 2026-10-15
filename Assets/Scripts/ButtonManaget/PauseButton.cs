@@ -29,7 +29,7 @@ public class PauseButton : MonoBehaviour
 
     public void Pause()
     {
-        EquationPanel.SetActive(false);
+        //EquationPanel.SetActive(false);
         PausePanel.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
@@ -39,9 +39,9 @@ public class PauseButton : MonoBehaviour
     public void Resume()
     {
         {
-            EquationPanel.SetActive(true);
+            //EquationPanel.SetActive(true);
             PausePanel.SetActive(false);
-            Time.timeScale = 10f;
+            Time.timeScale = 1f;
             isPaused = false;
         }
     }
