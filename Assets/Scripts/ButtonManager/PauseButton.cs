@@ -52,6 +52,10 @@ public class PauseButton : MonoBehaviour
         SceneManager.LoadScene("HomeScreen");
     }
 
+    public void LoadSceneByIndex(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
+    }
     public void QuitGame()
     {
         Application.Quit();

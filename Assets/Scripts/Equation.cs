@@ -20,9 +20,10 @@ public class Equation : MonoBehaviour
     [SerializeField] private GameObject timerMulti;
     public int _minValue = 0;
     public int _maxValue = 100;
+   
 
     public enum Operations { Add, Subtract, Multiply, Division};
-    public Operations operation = Operations.Add;
+    public Operations operation = Operations.Multiply;
 
     public bool RandomOperations = false;
     // private vars
@@ -273,6 +274,13 @@ public class Equation : MonoBehaviour
         scoreText.text = Score.ToString("0000");
     }
 
+    private void Awake()
+    {
+        // Pull from menu selection
+        operation = GameModeStatic.Operation;
+        RandomOperations = GameModeStatic.RandomOperations;
+    }
+
     private void Start()
     {
         Score = 0;
@@ -308,16 +316,12 @@ public class Equation : MonoBehaviour
 
         finalBestStreakText.text = "BEST STREAK: " + streakHighest;
 
-        //finalIncorrectQuestionsText
-
-       //if (incorrectQuestions == "")
-       //{
-       //finalIncorrectQuestionsText.text = "INCORRECT QUESTIONS\n\nNo incorrect answers!";
-       //}
-       //else
-       //{
-       //    finalIncorrectQuestionsText.text = "INCORRECT QUESTIONS\n\n" + incorrectQuestions;
-       //}
     }
+
+    private void SetGameMode()
+    {
+
+    }
+
 
 }
