@@ -15,7 +15,7 @@ public class PauseButton : MonoBehaviour
     void Update()
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
-                        Debug.Log("AAAAAAAAAAAAAAAAAAAAAA");
+            Resume();
 
         {
             if (EnterAnswer != null && EnterAnswer.isFocused)
@@ -55,6 +55,7 @@ public class PauseButton : MonoBehaviour
     public void LoadSceneByIndex(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
+        Time.timeScale = 1f;
     }
     public void QuitGame()
     {

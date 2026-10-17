@@ -88,7 +88,7 @@ public class StartButton : MonoBehaviour
     }
     public IEnumerator FadeOutScreen(float fadeTime) {
         float startAlphaValue = fadeOutImage.alpha;
-        float t = 0f;
+        //float t = 0f;
         while (fadeOutImage.alpha < 1)
         {
             Debug.Log("Fading");
