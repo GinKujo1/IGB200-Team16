@@ -301,20 +301,20 @@ public class Equation : MonoBehaviour
 
     public void ShowFinaleResults()
     {
-        finalScoreText.text = "FINAL SCORE: " + Score;
+        finalScoreText.text = $"{Score}";
 
-        finalQuestionsText.text = "QUESTIONS ANSWERED: " + totalQuestions;
+        finalQuestionsText.text = "Questions Answered: " + totalQuestions;
 
-        finalCorrectText.text = "CORRECT ANSWERS: " + questionsCorrect + " / " + totalQuestions;
+        finalCorrectText.text = "Correct: " + questionsCorrect + " / " + totalQuestions;
 
         float accuracy = 0f;
 
         if (totalQuestions > 0)
             accuracy = ((float)questionsCorrect / totalQuestions) * 100f;
 
-        finalAccuracyText.text = "ACCURACY: " + Mathf.RoundToInt(accuracy) + "%";
+        finalAccuracyText.text = "Accuracy: " + Mathf.RoundToInt(accuracy) + "%";
 
-        finalBestStreakText.text = "BEST STREAK: " + streakHighest;
+        finalBestStreakText.text = "Best Streak: " + streakHighest;
 
     }
 
