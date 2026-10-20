@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameUI;
     public GameObject resultsPanel;
     public GameObject pausePanel;
+    public GameObject tutorialPanel;
     private bool isPaused = false;
 
     public TMP_Text finalScoreText;
@@ -108,6 +109,11 @@ public class GameManager : MonoBehaviour
         // Update UI
         UpdateUI();
         UpdateTimerUI();
+    }
+
+    public void TutorialScreen()
+    {
+        tutorialPanel.SetActive(true);
     }
 
     public void SubmitAnswer()
