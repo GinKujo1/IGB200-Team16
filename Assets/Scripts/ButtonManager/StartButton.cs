@@ -12,6 +12,7 @@ public class StartButton : MonoBehaviour
     public Button divisionButton;
     public Button addButton;
     public Button subtractButton;
+    public GameObject TutorialPanel;
   
     [Header("Random Button")]
     public Button randomButton;
@@ -34,6 +35,11 @@ public class StartButton : MonoBehaviour
 
         // Initialize with default (Add selected)
         SelectOperation(Operations.Add);
+    }
+        public void Tutorial()
+    {
+        //EquationPanel.SetActive(false);
+        TutorialPanel.SetActive(true);
     }
 
     private void SelectOperation(Operations op)

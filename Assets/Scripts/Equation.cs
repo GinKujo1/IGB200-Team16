@@ -108,8 +108,8 @@ public class Equation : MonoBehaviour
 
     private void GenerateAddition()
     {
-        Mathf.Min(_minValue);
-        Mathf.Max(_maxValue);
+        Mathf.Min(_minValue = 1);
+        Mathf.Max(_maxValue = 100);
 
         Number1 = RandomNumber();
         Number2 = RandomNumber();
@@ -117,9 +117,8 @@ public class Equation : MonoBehaviour
     }
     private void GenerateSubtraction()
     {
-        Mathf.Min(_minValue);
-        Mathf.Max(_maxValue);
-
+        Mathf.Min(_minValue = 30);
+        Mathf.Max(_maxValue = 1);
 
         Number1 = RandomNumber();
         Number2 = RandomNumber();

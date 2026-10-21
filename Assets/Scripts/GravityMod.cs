@@ -6,7 +6,7 @@ public class GravityMod : MonoBehaviour
     public float gravityMultiplier = 2.0f;
 
     private bool IsSettle = false;
-    private float sleepinngThreshold = 0.05f;
+    private float sleepinngThreshold = 0.08f;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,8 +32,6 @@ public class GravityMod : MonoBehaviour
 
     }
 
-
-
     // Update is called once per frame
     void FixedUpdate() //Lets me edit the gravity/ force to move the prefab down faster
     {
@@ -42,11 +40,11 @@ public class GravityMod : MonoBehaviour
 
     }
 
-        void IsRested()
-        {
-            IsSettle = true;
-            rb.linearVelocity = Vector3.zero;
-            rb.isKinematic = true;
-            
-        }
+    void IsRested()
+    {
+        IsSettle = true;
+        rb.linearVelocity = Vector3.zero;
+        rb.isKinematic = true;
+
+    }
 }
