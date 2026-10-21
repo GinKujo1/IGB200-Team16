@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
 using static Equation;
 
 public class StartButton : MonoBehaviour
@@ -21,11 +20,9 @@ public class StartButton : MonoBehaviour
     private Operations selectedOperation = Operations.Multiply;
     private bool selectedRandom = false;
 
-    public GameObject tutorialPanel;
-
 
     //===================================================//
-
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -112,10 +109,7 @@ public class StartButton : MonoBehaviour
     {
         Application.Quit();
     }
-    public void TutorialPanel()
-    {
-        tutorialPanel.SetActive(true);
-    }
+    
 
 
 }

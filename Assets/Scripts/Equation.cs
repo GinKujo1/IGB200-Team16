@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SocialPlatforms.Impl;
 
 
 
@@ -21,9 +20,10 @@ public class Equation : MonoBehaviour
     [SerializeField] private GameObject timerMulti;
     public int _minValue = 0;
     public int _maxValue = 100;
+   
 
     public enum Operations { Add, Subtract, Multiply, Division};
-    public Operations operation = Operations.Add;
+    public Operations operation = Operations.Multiply;
 
     public bool RandomOperations = false;
     // private vars
@@ -41,7 +41,7 @@ public class Equation : MonoBehaviour
     private float questionsCorrect = 0;
     private float totalQuestions = 0;
     private int buildingIndex = 0;
-    private string incorrectQuestions = "";
+    //private string incorrectQuestions = "";
 
     [Header("WinCard Text Variables")]
     public TMP_Text finalScoreText;
@@ -50,8 +50,8 @@ public class Equation : MonoBehaviour
     public TMP_Text finalAccuracyText;
     public TMP_Text finalBestStreakText;
 
-    [Header("NOT IMPLEMENTED")]
-    public TMP_Text finalIncorrectQuestionsText; 
+    //[Header("NOT IMPLEMENTED")]
+    //public TMP_Text finalIncorrectQuestionsText; 
 
 
     private int RandomNumber()
@@ -274,6 +274,13 @@ public class Equation : MonoBehaviour
         scoreText.text = Score.ToString("0000");
     }
 
+    private void Awake()
+    {
+        // Pull from menu selection
+        operation = GameModeStatic.Operation;
+        RandomOperations = GameModeStatic.RandomOperations;
+    }
+
     private void Start()
     {
         Score = 0;
@@ -294,31 +301,27 @@ public class Equation : MonoBehaviour
 
     public void ShowFinaleResults()
     {
-        finalScoreText.text = "FINAL SCORE: " + Score;
+        finalScoreText.text = $"{Score}";
 
-        finalQuestionsText.text = "QUESTIONS ANSWERED: " + totalQuestions;
+        finalQuestionsText.text = "Questions Answered: " + totalQuestions;
 
-        finalCorrectText.text = "CORRECT ANSWERS: " + questionsCorrect + " / " + totalQuestions;
+        finalCorrectText.text = "Correct: " + questionsCorrect + " / " + totalQuestions;
 
         float accuracy = 0f;
 
         if (totalQuestions > 0)
             accuracy = ((float)questionsCorrect / totalQuestions) * 100f;
 
-        finalAccuracyText.text = "ACCURACY: " + Mathf.RoundToInt(accuracy) + "%";
+        finalAccuracyText.text = "Accuracy: " + Mathf.RoundToInt(accuracy) + "%";
 
-        finalBestStreakText.text = "BEST STREAK: " + streakHighest;
+        finalBestStreakText.text = "Best Streak: " + streakHighest;
 
-        //finalIncorrectQuestionsText
-
-        if (incorrectQuestions == "")
-        {
-        finalIncorrectQuestionsText.text = "INCORRECT QUESTIONS\n\nNo incorrect answers!";
-        }
-        else
-        {
-            finalIncorrectQuestionsText.text = "INCORRECT QUESTIONS\n\n" + incorrectQuestions;
-        }
     }
+
+    private void SetGameMode()
+    {
+
+    }
+
 
 }

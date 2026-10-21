@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Timer_Multiplier : MonoBehaviour
 {
 
@@ -9,12 +9,15 @@ public class Timer_Multiplier : MonoBehaviour
     private bool isTimerRunning = false;
     [Tooltip("Adjusts Timer seconds")]
     [SerializeField] private float multiplierTimer = 11f;
+    [SerializeField] private Slider timerSlider;
     public float timeRemaining;
 
 
     private void Start()
     {
         isTimerRunning = true;  // this starts the timer when the scene starts can be modified later
+        timerSlider.maxValue = multiplierTimer;
+        timerSlider.value = timeRemaining;
         timeRemaining = multiplierTimer;
     }
 
@@ -22,17 +25,14 @@ public class Timer_Multiplier : MonoBehaviour
     {
         if (isTimerRunning)
         {
-            if (timeRemaining > 0)
+            if (timeRemaining > 1)
             {
-                // Subtract the time passed since the last frame
-                
-                
                 timeRemaining -= Time.deltaTime;
                 DisplayTime(timeRemaining);
             }
             else
             {
-                Debug.Log("Time has run out!");
+                //Debug.Log("Time has run out!");
                 timeRemaining = 0;
                 isTimerRunning = false;
                 DisplayTime(timeRemaining);
@@ -44,13 +44,14 @@ public class Timer_Multiplier : MonoBehaviour
     {
         //Debug.Log("Next question");
         timeRemaining = multiplierTimer;
+        timerSlider.value = multiplierTimer;
         isTimerRunning = true;
     }
 
     private void DisplayTime(float timeToDisplay)
     {
-
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timerText.text = string.Format("{0:00}", seconds);
+        timerSlider.value = seconds;
     }
 }

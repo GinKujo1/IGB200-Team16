@@ -163,7 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b26494aaea6c7f4696f950b1e149bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
-  CorrectBuilding: {fileID: 4883806153789170051, guid: e65e4590b3bbacc40a30d288de717fc1, type: 3}
   spawnerObject: {fileID: 46128215}
   moveUp: 130
   BuildingsToSpawn:
@@ -1773,6 +1772,10 @@ PrefabInstance:
       propertyPath: m_OnEndEdit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 348245696}
+    - target: {fileID: 7981850717743194544, guid: 80fcaa4520c3a3f468bd0ad3b47acc44, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8917756069408429495, guid: 80fcaa4520c3a3f468bd0ad3b47acc44, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

@@ -15,7 +15,7 @@ public class PauseButton : MonoBehaviour
     void Update()
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
-                        Debug.Log("AAAAAAAAAAAAAAAAAAAAAA");
+            Resume();
 
         {
             if (EnterAnswer != null && EnterAnswer.isFocused)
@@ -29,7 +29,7 @@ public class PauseButton : MonoBehaviour
 
     public void Pause()
     {
-        EquationPanel.SetActive(false);
+        //EquationPanel.SetActive(false);
         PausePanel.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
@@ -39,9 +39,9 @@ public class PauseButton : MonoBehaviour
     public void Resume()
     {
         {
-            EquationPanel.SetActive(true);
+            //EquationPanel.SetActive(true);
             PausePanel.SetActive(false);
-            Time.timeScale = 10f;
+            Time.timeScale = 1f;
             isPaused = false;
         }
     }
@@ -52,6 +52,11 @@ public class PauseButton : MonoBehaviour
         SceneManager.LoadScene("HomeScreen");
     }
 
+    public void LoadSceneByIndex(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
+        Time.timeScale = 1f;
+    }
     public void QuitGame()
     {
         Application.Quit();
