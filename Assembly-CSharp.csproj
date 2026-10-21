@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\ButtonManager\PauseButton.cs" />
     <Compile Include="Assets\Scripts\SceneMusicManager.cs" />
     <Compile Include="Assets\Scripts\Equation.cs" />
+    <Compile Include="Assets\Scripts\PreGameCountDown.cs" />
     <Compile Include="Assets\Scripts\BuildingCollisionEffects.cs" />
     <Compile Include="Assets\Scripts\MaterialRandomiser.cs" />
     <Compile Include="Assets\Scripts\GravityMod.cs" />

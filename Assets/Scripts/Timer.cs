@@ -18,7 +18,7 @@ public class Timer : MonoBehaviour
     private void Start()
     {
         
-        isTimerRunning = true;  // this starts the timer when the scene starts can be modified later
+        //isTimerRunning = true;  // this starts the timer when the scene starts can be modified later
         timerConverted = timerTime * 60;
     }
 
@@ -67,7 +67,9 @@ public class Timer : MonoBehaviour
             ScoreBoardManager.Instance.AddScore(playerName, finalScore);
         }
     }
-
+    public void StartTimer() {
+        isTimerRunning = true;
+    }
     //potentially submit score button
     //TMP_InputField nameInput;
     //public void SubmitScore(int finalScore)

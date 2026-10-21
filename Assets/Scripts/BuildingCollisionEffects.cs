@@ -21,7 +21,7 @@ public class BuildingCollisionEffects : MonoBehaviour
         {
             if (effect != null)
             {
-                Debug.Log("Playfx");
+                //Debug.Log("Playfx");
                 effect.Play();
 
             }
