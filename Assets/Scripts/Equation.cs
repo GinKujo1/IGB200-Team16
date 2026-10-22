@@ -18,7 +18,7 @@ public class Equation : MonoBehaviour
     [Header("Gameplay Variables")]
     [SerializeField] private GameObject spawner;
     [SerializeField] private GameObject timerMulti;
-    public int _minValue = 0;
+    public int _minValue = 1;
     public int _maxValue = 100;
    
 
@@ -117,8 +117,8 @@ public class Equation : MonoBehaviour
     }
     private void GenerateSubtraction()
     {
-        Mathf.Min(_minValue = 30);
-        Mathf.Max(_maxValue = 1);
+        Mathf.Min(_minValue = 1);
+        Mathf.Max(_maxValue = 50);
 
         Number1 = RandomNumber();
         Number2 = RandomNumber();

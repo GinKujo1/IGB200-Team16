@@ -17,6 +17,7 @@ public class PauseButton : MonoBehaviour
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
             Resume();
 
+
         {
             if (EnterAnswer != null && EnterAnswer.isFocused)
             {
