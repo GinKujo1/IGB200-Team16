@@ -790,7 +790,7 @@ MonoBehaviour:
   FloorText: {fileID: 1073192066}
   spawner: {fileID: 46128214}
   timerMulti: {fileID: 4950167177308092916}
-  _minValue: 0
+  _minValue: 1
   _maxValue: 100
   operation: 0
   RandomOperations: 1
@@ -1265,7 +1265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &590180998
 RectTransform:
   m_ObjectHideFlags: 0
