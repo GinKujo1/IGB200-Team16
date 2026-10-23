@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Timer_Multiplier : MonoBehaviour
 {
 
+    [SerializeField] private Equation mathManager;
     [SerializeField] private TextMeshProUGUI timerText;
 
     private bool isTimerRunning = false;
@@ -36,6 +37,10 @@ public class Timer_Multiplier : MonoBehaviour
                 timeRemaining = 0;
                 isTimerRunning = false;
                 DisplayTime(timeRemaining);
+                mathManager.resetStreak();
+                mathManager.displayStreak();
+                mathManager.resetMulti();
+                mathManager.displayMulti();
                 //nextQuestion();
             }
         }

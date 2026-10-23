@@ -160,7 +160,7 @@ public class Equation : MonoBehaviour
             questionsCorrect++;
             SoundManager.Instance.PlaySoundEffect(SFXType.SFX_CorrectAnswer);
 
-            if(timerMulti.GetComponent<Timer_Multiplier>().timeRemaining > 0)
+            if(timerMulti.GetComponent<Timer_Multiplier>().timeRemaining > 0 || streakCurrent == 0)
             {
                 StreakUp(1);
                 displayStreak();
@@ -246,7 +246,7 @@ public class Equation : MonoBehaviour
             streakHighest = streakCurrent;
         }
     }
-    private void resetStreak()
+    public void resetStreak()
     {
         streakCurrent = 0;
     }
@@ -255,16 +255,16 @@ public class Equation : MonoBehaviour
     {
         multi = value;
     }
-    private void resetMulti()
+    public void resetMulti()
     {
         multi = 1.0f;
     }
 
-    private void displayMulti() // dirty local function should probs call from the ui script.
+    public void displayMulti() // dirty local function should probs call from the ui script.
     {
         multiText.text = $"x{multi:F1}";
     }
-    private void displayStreak() // dirty local function should probs call from the ui script.
+    public void displayStreak() // dirty local function should probs call from the ui script.
     {
         StreakText.text = $"{streakCurrent}";
     }
