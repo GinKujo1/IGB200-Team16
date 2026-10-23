@@ -36,7 +36,7 @@ public class StartButton : MonoBehaviour
         // Initialize with default (Add selected)
         SelectOperation(Operations.Add);
     }
-        public void Tutorial()
+    public void Tutorial()
     {
         //EquationPanel.SetActive(false);
         TutorialPanel.SetActive(true);

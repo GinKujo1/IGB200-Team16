@@ -14,6 +14,7 @@ public class Equation : MonoBehaviour
     [SerializeField] private TMP_Text equationText;
     [SerializeField] private TMP_Text multiText;
     [SerializeField] private TMP_Text StreakText;
+    [SerializeField] private TMP_Text FloorText;
 
     [Header("Gameplay Variables")]
     [SerializeField] private GameObject spawner;
@@ -195,6 +196,7 @@ public class Equation : MonoBehaviour
             spawner.GetComponent<Spawner>().SpawnBuildingFromlist(buildingIndex);
             timerMulti.GetComponent<Timer_Multiplier>().nextQuestion();
             ScoreUp(100, multi);
+            displayTotalFloor();
             displayScore();
             NewEquation();
         }
@@ -213,7 +215,9 @@ public class Equation : MonoBehaviour
         }
     }
 
-        void Update()
+
+
+    void Update()
         {
             //if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
             //{
@@ -263,6 +267,9 @@ public class Equation : MonoBehaviour
     private void displayStreak() // dirty local function should probs call from the ui script.
     {
         StreakText.text = $"{streakCurrent}";
+    }
+    private void displayTotalFloor() {
+        FloorText.text = $"{totalQuestions}";
     }
     private void ScoreUp(int value, float multiplier = 1)
     {
