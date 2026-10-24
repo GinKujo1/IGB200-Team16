@@ -1,6 +1,9 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using static System.TimeZoneInfo;
 
 
 
@@ -15,6 +18,14 @@ public class Equation : MonoBehaviour
     [SerializeField] private TMP_Text multiText;
     [SerializeField] private TMP_Text StreakText;
     [SerializeField] private TMP_Text FloorText;
+    [SerializeField] private GameObject StreakTimerFillObj;
+    [SerializeField] private GameObject StreakBackground;
+    [SerializeField] private float flashDuration = 0.1f;
+    [SerializeField] [Range(0, 1)] private float flashRatio = 0.5f;
+    [SerializeField] private Color StreakInactiveColor;
+    [SerializeField] private Color StreakActiveColor;
+    [SerializeField] private Color StreakAddedColor;
+    [SerializeField] private Color StreakResetColor;
 
     [Header("Gameplay Variables")]
     [SerializeField] private GameObject spawner;
@@ -164,6 +175,8 @@ public class Equation : MonoBehaviour
             {
                 StreakUp(1);
                 displayStreak();
+                StopAllCoroutines();
+                StartCoroutine(PlayStreakFlashVFX(StreakAddedColor, StreakActiveColor));
             }
             switch(streakCurrent)
             {
@@ -207,6 +220,8 @@ public class Equation : MonoBehaviour
             SoundManager.Instance.PlaySoundEffect(SFXType.SFX_WrongAnswer);
             resetMulti();
             resetStreak();  ///reset streak
+            StopAllCoroutines();
+            StartCoroutine(PlayStreakFlashVFX(StreakResetColor, StreakInactiveColor));
             buildingIndex = 0;
             displayStreak();
             displayMulti();
@@ -267,6 +282,32 @@ public class Equation : MonoBehaviour
     public void displayStreak() // dirty local function should probs call from the ui script.
     {
         StreakText.text = $"{streakCurrent}";
+    }
+    public IEnumerator PlayStreakFlashVFX(Color colorToFlash, Color colorAfterFlash) {
+        float elapsed = 0f;
+
+        while (elapsed < flashDuration * flashRatio)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / flashDuration;
+            StreakBackground.GetComponent<Image>().color = Color.Lerp(Color.white, colorToFlash, t);
+            StreakTimerFillObj.GetComponent<Image>().color = Color.Lerp(Color.white, colorToFlash, t);
+
+            yield return null;
+        }
+
+        while (elapsed > flashDuration * flashRatio && elapsed < flashDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / flashDuration;
+            StreakBackground.GetComponent<Image>().color = Color.Lerp(colorToFlash, colorAfterFlash, t);
+            StreakTimerFillObj.GetComponent<Image>().color = Color.Lerp(colorToFlash, colorAfterFlash, t);
+
+            yield return null;
+        }
+    }
+    public void PlayAddStreakVFX() { 
+        
     }
     private void displayTotalFloor() {
         FloorText.text = $"{totalQuestions}";

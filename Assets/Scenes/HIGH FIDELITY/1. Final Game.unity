@@ -788,6 +788,14 @@ MonoBehaviour:
   multiText: {fileID: 8384008668278898858}
   StreakText: {fileID: 1885672696}
   FloorText: {fileID: 1073192066}
+  StreakTimerFillObj: {fileID: 9060339026026382499}
+  StreakBackground: {fileID: 802914700}
+  flashDuration: 0.5
+  flashRatio: 0.5
+  StreakInactiveColor: {r: 0.50980395, g: 0.50980395, b: 0.50980395, a: 1}
+  StreakActiveColor: {r: 0, g: 0, b: 0, a: 0}
+  StreakAddedColor: {r: 0, g: 0, b: 0, a: 0}
+  StreakResetColor: {r: 1, g: 0, b: 0, a: 0}
   spawner: {fileID: 46128214}
   timerMulti: {fileID: 4950167177308092916}
   _minValue: 1
@@ -1265,7 +1273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &590180998
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1501,15 +1509,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.50175786, a: 1}
+  m_Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9928c22130f0dfe40a4634fe3e1b082c, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 29b44815dbc5b6a43a7f212a54994e10, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -16645,14 +16653,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.41666675, a: 1}
+  m_Color: {r: 0.50980395, g: 0.50980395, b: 0.50980395, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 35f2764ceaa1286449431097cb5db5eb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 77bbe5c0e61bded44928fdd470df6f5d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

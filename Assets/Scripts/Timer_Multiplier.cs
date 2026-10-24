@@ -59,4 +59,5 @@ public class Timer_Multiplier : MonoBehaviour
         timerText.text = string.Format("{0:00}", seconds);
         timerSlider.value = seconds;
     }
+
 }
