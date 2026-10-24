@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 
@@ -62,5 +63,25 @@ public class CameraBehavior : MonoBehaviour
         targetPos = currentPos;
         isMoving = true;
     }
+    private IEnumerator CameraShake(float duration, float magnitude) {
+        Vector3 originalpos = transform.localPosition;
 
+        float elapsed = 0.0f;
+
+        while (elapsed < duration) {
+            float x = Random.Range(-1, 1) * magnitude;
+            float z = Random.Range(-1, 1) * magnitude;
+
+            transform.localPosition = new Vector3(originalpos.x + x, originalpos.y, originalpos.z + z);
+
+            elapsed += Time.deltaTime;
+            yield return new WaitForSeconds(.004f);
+            //yield return null;
+        }
+
+        transform.localPosition = originalpos;
+    }
+    public void StartCameraShake(float duration, float magnitude) {
+        StartCoroutine(CameraShake(duration, magnitude));
+    }
 }

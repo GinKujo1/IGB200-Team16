@@ -18,6 +18,12 @@ public class Equation : MonoBehaviour
     [SerializeField] private TMP_Text multiText;
     [SerializeField] private TMP_Text StreakText;
     [SerializeField] private TMP_Text FloorText;
+
+    [Header("StreakEffect Variables")]
+    [SerializeField] private CameraBehavior cameraObj;
+    [SerializeField] private bool cameraShake;
+    [SerializeField] private float cameraShakeDuration = 0.6f;
+    [SerializeField] private float cameraShakeMagnitude = 0.4f;
     [SerializeField] private GameObject StreakTimerFillObj;
     [SerializeField] private GameObject StreakBackground;
     [SerializeField] private float flashDuration = 0.1f;
@@ -220,6 +226,9 @@ public class Equation : MonoBehaviour
             SoundManager.Instance.PlaySoundEffect(SFXType.SFX_WrongAnswer);
             resetMulti();
             resetStreak();  ///reset streak
+            if (cameraShake) { 
+                cameraObj.StartCameraShake(cameraShakeDuration, cameraShakeMagnitude);
+            }
             StopAllCoroutines();
             StartCoroutine(PlayStreakFlashVFX(StreakResetColor, StreakInactiveColor));
             buildingIndex = 0;

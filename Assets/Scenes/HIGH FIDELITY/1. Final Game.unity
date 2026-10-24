@@ -788,6 +788,10 @@ MonoBehaviour:
   multiText: {fileID: 8384008668278898858}
   StreakText: {fileID: 1885672696}
   FloorText: {fileID: 1073192066}
+  cameraObj: {fileID: 330585548}
+  cameraShake: 1
+  cameraShakeDuration: 0.3
+  cameraShakeMagnitude: 5
   StreakTimerFillObj: {fileID: 9060339026026382499}
   StreakBackground: {fileID: 802914700}
   flashDuration: 1
@@ -1273,7 +1277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &590180998
 RectTransform:
   m_ObjectHideFlags: 0
