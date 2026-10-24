@@ -18,8 +18,8 @@ public class Timer_Multiplier : MonoBehaviour
     {
         isTimerRunning = true;  // this starts the timer when the scene starts can be modified later
         timerSlider.maxValue = multiplierTimer;
-        timerSlider.value = timeRemaining;
-        timeRemaining = multiplierTimer;
+        timerSlider.value = 0;
+        timeRemaining = 0;
     }
 
     private void Update()
@@ -48,9 +48,15 @@ public class Timer_Multiplier : MonoBehaviour
     public void nextQuestion()
     {
         //Debug.Log("Next question");
-        timeRemaining = multiplierTimer;
-        timerSlider.value = multiplierTimer;
-        isTimerRunning = true;
+        if (mathManager.GetCurrentStreak() <= 0) {
+            timeRemaining = 0;
+            timerSlider.value = 0;
+            isTimerRunning = false;
+        } else {
+            timeRemaining = multiplierTimer;
+            timerSlider.value = multiplierTimer;
+            isTimerRunning = true;
+        }
     }
 
     private void DisplayTime(float timeToDisplay)

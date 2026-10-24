@@ -373,7 +373,9 @@ public class Equation : MonoBehaviour
         finalBestStreakText.text = "Best Streak: " + streakHighest;
 
     }
-
+    public float GetCurrentStreak() {
+        return streakCurrent;
+    }
     private void SetGameMode()
     {
 
